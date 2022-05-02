@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.ColorPreference
+            app:key="authentication"
+            app:title="비밀번호 인증 방식"
+            app:summary="PIN5"
+            app:summaryColor="@color/app_theme_color"
+            app:widgetLayout="@layout/prefs_end_widget_arrow_forward"/>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.ColorSwitchPreferenceCompat
+            app:key="screen_lock"
+            app:title="화면 잠금 방식"
+            app:summaryOn="모든 화면에서, 앱 잠금 방식, 20초"
+            app:summaryOff="앱 시작 시에만"
+            app:summaryOnColor="@color/app_theme_color"
+            app:summaryOffColor="@color/gray500"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

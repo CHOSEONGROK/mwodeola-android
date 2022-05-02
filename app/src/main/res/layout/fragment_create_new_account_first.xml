@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:id="@+id/label1"
+        android:text="새로 만들 계정의"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label2"
+        android:text="그룹명을 지정해주세요"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/label1"
+        app:layout_constraintStart_toStartOf="@id/label1"/>
+
+    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:id="@+id/icon"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/label2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:id="@+id/edt_layout_account_group_name"
+        android:hint="새 계정의 그룹명"
+        app:endIconMode="custom"
+        app:endIconTint="@android:color/holo_green_light"
+        app:boxBackgroundColor="#80BBDEFB"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeColor="@color/blue400"
+        app:helperTextTextColor="@android:color/holo_green_dark"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edt_account_group_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/edt_mask"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/edt_layout_account_group_name"
+        app:layout_constraintBottom_toBottomOf="@id/edt_layout_account_group_name"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+        app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_package_name"
+        app:layout_constraintTop_toBottomOf="@id/edt_layout_account_group_name"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_web_url"
+        android:hint="url"
+        android:inputType="textUri"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_package_name"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+        app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/edt_user_id"
+        android:hint="User ID"
+        android:inputType="text"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@id/edt_web_url"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+        app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/edt_user_password"
+        android:hint="Password"
+        android:inputType="textWebPassword"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@id/edt_user_id"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+        app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/edt_memo"
+        android:hint="Memo"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/edt_user_password"
+        app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+        app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/btn_save"
+        android:text="저장하기"
+        app:layout_constraintTop_toBottomOf="@id/edt_memo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

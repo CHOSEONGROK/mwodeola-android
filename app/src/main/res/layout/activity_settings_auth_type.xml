@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/btn_back"
+        android:src="@drawable/outline_arrow_back_24"
+        app:tint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/actionButtonStyle"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="24dp"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_title"
+        android:text="인증 및 보안"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:id="@+id/container"
+        app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+        <!-- PIN5 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="0dp"
+            android:id="@+id/container_pin5"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/tv_title_pin5"
+                android:text="PIN5"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_subtitle_pin5"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Title"/>
+
+            <TextView
+                android:id="@+id/tv_subtitle_pin5"
+                android:text="등록됨, 마스터 비밀번호"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_pin5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Subtitle"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_pin5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/SettingsActivity.RadioButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- PIN6 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="0dp"
+            android:id="@+id/container_pin6"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/tv_title_pin6"
+                android:text="PIN6"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_subtitle_pin6"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Title"/>
+
+            <TextView
+                android:id="@+id/tv_subtitle_pin6"
+                android:text="등록 안 됨"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_pin6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Subtitle"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_pin6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/SettingsActivity.RadioButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Pattern -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="0dp"
+            android:id="@+id/container_pattern"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/tv_title_pattern"
+                android:text="패턴 비밀번호"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_subtitle_pattern"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Title"/>
+
+            <TextView
+                android:id="@+id/tv_subtitle_pattern"
+                android:text="등록 안 됨"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_pattern"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Subtitle"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_pattern"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/SettingsActivity.RadioButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 지문 인증 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="0dp"
+            android:id="@+id/container_biometric"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/tv_title_biometric"
+                android:text="지문 인증"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_subtitle_biometric"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Title"/>
+
+            <TextView
+                android:id="@+id/tv_subtitle_biometric"
+                android:text="등록 안 됨"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_biometric"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/SettingsActivity.TextView.Subtitle"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_biometric"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/SettingsActivity.RadioButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/half_guideline"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:id="@+id/btn_update"
+        android:text="update"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/half_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/btn_delete"
+        android:text="delete"
+        app:layout_constraintTop_toTopOf="@id/half_guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_update"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>    

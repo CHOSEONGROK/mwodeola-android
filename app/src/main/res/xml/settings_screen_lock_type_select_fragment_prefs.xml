@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jojo.android.mwodeola.presentation.settings.custom.ColorSwitchPreferenceCompat
+        app:key="screen_lock_enabled"
+        app:titleOn="화면 잠금 사용 중"
+        app:titleOff="화면 잠금 사용 안 함"
+        app:titleOnColor="@color/app_theme_color"
+        app:titleOffColor="@color/black"
+        app:summaryOn="모든 화면에서"
+        app:summaryOff="앱 시작 시에만"
+        app:summaryColor="@color/gray500"/>
+
+    <com.jojo.android.mwodeola.presentation.settings.custom.RadioGroupPreference
+        app:key="auth_type_radio_group"
+        app:title="인증 방식"
+        app:dependency="screen_lock_enabled">
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="app_credential"
+            app:title="앱 비밀번호"/>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="device_credential"
+            app:title="휴대폰의 화면 잠금과 동일한 방식"/>
+
+    </com.jojo.android.mwodeola.presentation.settings.custom.RadioGroupPreference>
+
+    <PreferenceCategory
+        app:key="timeout_category"
+        app:title="작동 시간"
+        app:dependency="screen_lock_enabled">
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.ColorPreference
+            app:key="screen_lock_timeout"
+            app:title="화면 잠금이 작동되는 시간 설정하기"
+            app:summary="20초"
+            app:summaryColor="@color/app_theme_color"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

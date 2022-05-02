@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="48dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="24dp"
+        android:text="화면 잠금 작동 시간 선택"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/toggle_group"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="즉시"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="0"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="5초"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="5"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="10초"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="10"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="15초"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="15"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="20초"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="20"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="30초"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="30"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="1분"
+            android:textSize="20sp"
+            app:strokeColor="@android:color/transparent"
+            android:tag="60"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SquircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SquircleIcon">
+        <attr name="icon_text" format="string"/>
+        <attr name="icon_text_size" format="dimension"/>
+        <attr name="icon_text_color" format="color"/>
+        <attr name="icon_text_backgroundColor" format="color"/>
+        <attr name="icon_imgSrc" format="reference|color"/>
+        <attr name="badge" format="reference"/>
+        <attr name="maskView" format="reference"/>
+        <attr name="maskView_backgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedEdgeConstraintLayout">
+        <attr name="separator_id" format="reference"/>
+        <attr name="boxBackgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyBottomNavigationView">
+        <attr name="menu" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="PatternPasswordView">
+        <attr name="editable" format="boolean"/>
+        <attr name="dotsSize" format="dimension"/>
+        <attr name="dotsScaleFactor" format="float"/>
+        <attr name="dotsColor" format="color"/>
+        <attr name="dotsErrorColor" format="color"/>
+        <attr name="dotsHighlightColor" format="color"/>
+        <attr name="dotsTouchSensitivityOffset" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="strokeColor" format="color"/>
+        <attr name="strokeErrorColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="DotsIndicator">
+        <attr name="indicator_dotsSize" format="dimension"/>
+        <attr name="indicator_dotsMargins" format="dimension"/>
+        <attr name="indicator_dotsDefaultColor" format="color"/>
+        <attr name="indicator_dotsSelectedColor" format="color"/>
+        <attr name="indicator_dotsElevation" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorPreference">
+        <attr name="title" format="string"/>
+        <attr name="titleOn" format="string"/>
+        <attr name="titleOff" format="string"/>
+
+        <attr name="titleColor" format="reference|color"/>
+        <attr name="titleOnColor" format="reference|color"/>
+        <attr name="titleOffColor" format="reference|color"/>
+
+        <attr name="summary" format="string"/>
+        <attr name="summaryOff" format="string"/>
+        <attr name="summaryOn" format="string"/>
+
+        <attr name="summaryColor" format="reference|color"/>
+        <attr name="summaryOnColor" format="reference|color"/>
+        <attr name="summaryOffColor" format="reference|color"/>
+    </declare-styleable>
+
+    <dimen name="app_icon_size_large">60dp</dimen>
+</resources>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E6000000">
+
+    <!-- Close Button -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:id="@+id/btn_close"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/actionButtonStyle"/>
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title"
+        android:text="앱 아이콘 설정"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/btn_close"
+        app:layout_constraintBottom_toBottomOf="@id/btn_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 기본 텍스트 로고 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_icon_default"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/container_icon_installed_app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/UserAccountIconSelectActivity.Container">
+
+        <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+            android:id="@+id/icon_default"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="기본 텍스트 아이콘"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_default"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 설치된 앱 목록 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_icon_installed_app"
+        app:layout_constraintTop_toBottomOf="@id/container_icon_default"
+        app:layout_constraintBottom_toTopOf="@id/container_icon_extracted_from_url"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/UserAccountIconSelectActivity.Container">
+
+        <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+            android:id="@+id/icon_installed_app"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:id="@+id/tv_label"
+            android:text="설치된 앱 목록"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_installed_app"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Url 에서 추출된 로고 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_icon_extracted_from_url"
+        app:layout_constraintTop_toBottomOf="@id/container_icon_installed_app"
+        app:layout_constraintBottom_toTopOf="@id/container_icon_in_server"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/UserAccountIconSelectActivity.Container">
+
+        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+            android:id="@+id/icon_extracted_from_url"
+            android:src="@drawable/outline_question_mark_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="입력된 Url 에서 웹페이지 아이콘 자동 추출"
+            android:textColor="@color/gray700"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_extracted_from_url"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 서버에 저장된 로고 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_icon_in_server"
+        app:layout_constraintTop_toBottomOf="@id/container_icon_extracted_from_url"
+        app:layout_constraintBottom_toTopOf="@id/container_icon_user_custom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/UserAccountIconSelectActivity.Container">
+
+        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+            android:id="@+id/icon_in_server"
+            android:src="@drawable/outline_question_mark_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="대표 아이콘 선택"
+            android:textColor="@color/gray700"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_in_server"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 사용자 지정 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_icon_user_custom"
+        app:layout_constraintTop_toBottomOf="@id/container_icon_in_server"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/UserAccountIconSelectActivity.Container">
+
+        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+            android:id="@+id/icon_user_custom"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+        <ImageView
+            android:id="@+id/iv_app_icon_user_custom_mask"
+            android:padding="20dp"
+            android:visibility="visible"
+            android:background="@drawable/bg_round_corner_50"
+            android:src="@drawable/round_photo_camera_24"
+            app:tint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/UserAccountIconSelectActivity.SquircleIcon"/>
+
+<!--        <com.jojo.android.mwodeola.presentation.common.MwodeolaIconView-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            style="@style/AccountIconSelectActivity.MwodeolaIconView"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="갤러리에서 직접 설정"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_user_custom"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="대표 아이콘 이미지를 선택해 주세요"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintTop_toBottomOf="@id/container_icon_user_custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

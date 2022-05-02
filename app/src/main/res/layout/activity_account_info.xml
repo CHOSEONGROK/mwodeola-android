@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back"
+        android:src="@drawable/outline_arrow_back_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/actionButtonStyle"/>
+
+    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/icon"
+        app:icon_text_size="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tv_icon_type"
+        android:hint="Icon Type"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="48dp"
+        android:id="@+id/tv_account_name"
+        android:hint="Account Name"
+        app:layout_constraintTop_toBottomOf="@id/tv_icon_type"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_package_name"
+        android:hint="Package Name"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+        app:layout_constraintStart_toStartOf="@id/tv_account_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_user_id"
+        android:hint="ID or E-mail"
+        app:layout_constraintTop_toBottomOf="@id/tv_package_name"
+        app:layout_constraintStart_toStartOf="@id/tv_account_name"/>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/container_password"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_id"
+        app:layout_constraintStart_toStartOf="@id/tv_account_name">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:id="@+id/til_user_password"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tie_user_password"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/tv_url"
+        android:hint="url"
+        android:autoLink="web"
+        app:layout_constraintTop_toBottomOf="@id/container_password"
+        app:layout_constraintStart_toStartOf="@id/tv_account_name"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
+        android:id="@+id/tv_metadata"
+        android:hint="Metadata"
+        app:layout_constraintTop_toBottomOf="@id/tv_url"
+        app:layout_constraintStart_toStartOf="@id/tv_account_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:menu="@menu/user_account_info_bot_nav_item"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

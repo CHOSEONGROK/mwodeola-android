@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "683930078055",
+    "project_id": "com-jojo-android-mwodeola",
+    "storage_bucket": "com-jojo-android-mwodeola.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683930078055:android:288e8c4b2c1a02e164fdc2",
+        "android_client_info": {
+          "package_name": "com.jojo.android.mwodeola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683930078055-lm8k8naacf3n21qmqt0o1ipb9t6sbr6o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jojo.android.mwodeola",
+            "certificate_hash": "a9e0b257bb0944f8c6e63efdc436f5914181e8a7"
+          }
+        },
+        {
+          "client_id": "683930078055-49itq1stjuo1djntk9ooqaa27v8pf5cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDubpH6BFCgM01rSrXw3OesNOmx_ne-u9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683930078055-49itq1stjuo1djntk9ooqaa27v8pf5cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

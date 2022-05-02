@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_settings"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.jojo.android.mwodeola.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsUserInfoFragment"
+            app:destination="@id/settingsUserInfoFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsAuthAndSecurityFragment"
+            app:destination="@id/settingsAuthAndSecurityFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsUserInfoFragment"
+        android:name="com.jojo.android.mwodeola.presentation.settings.userInfo.SettingsUserInfoFragment"
+        android:label="SettingsUserInfoFragment"
+        tools:layout="@layout/fragment_settings_user_info"/>
+
+    <fragment
+        android:id="@+id/settingsAuthAndSecurityFragment"
+        android:name="com.jojo.android.mwodeola.presentation.settings.authAndSecurity.SettingsAuthAndSecurityFragment"
+        android:label="SettingsAuthAndSecurityFragment" >
+        <action
+            android:id="@+id/action_settingsAuthAndSecurityFragment_to_settingsAuthTypeSelectFragment"
+            app:destination="@id/settingsAuthTypeSelectFragment" />
+        <action
+            android:id="@+id/action_settingsAuthAndSecurityFragment_to_settingsScreenLockTypeSelectFragment"
+            app:destination="@id/settingsScreenLockTypeSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsAuthTypeSelectFragment"
+        android:name="com.jojo.android.mwodeola.presentation.settings.authAndSecurity.SettingsAuthTypeSelectFragment"
+        android:label="SettingsAuthTypeSelectFragment" />
+
+    <fragment
+        android:id="@+id/settingsScreenLockTypeSelectFragment"
+        android:name="com.jojo.android.mwodeola.presentation.settings.authAndSecurity.SettingsScreenLockTypeSelectFragment"
+        android:label="SettingsScreenLockTypeSelectFragment" />
+
+
+</navigation>

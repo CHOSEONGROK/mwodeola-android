@@ -1,0 +1,113 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "3445ba4452b40bc4f67eb4bc120ce1cd",
+    "entities": [
+      {
+        "tableName": "UserAccount",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AccountName` TEXT NOT NULL, `PackageName` TEXT, `UserID` TEXT, `UserPassword` TEXT, `Url` TEXT, `Memo` TEXT, `isFavorite` INTEGER NOT NULL, `RowId` INTEGER NOT NULL, `RowIdOfSNSAccount` INTEGER NOT NULL, `IconType` TEXT NOT NULL DEFAULT 'DEFAULT', `creationDate` TEXT NOT NULL, `lastModifiedDate` TEXT NOT NULL, `lastConfirmedDate` TEXT NOT NULL, `views` INTEGER NOT NULL, PRIMARY KEY(`RowId`))",
+        "fields": [
+          {
+            "fieldPath": "accountName",
+            "columnName": "AccountName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "packageName",
+            "columnName": "PackageName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userID",
+            "columnName": "UserID",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userPassword",
+            "columnName": "UserPassword",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "Url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "memo",
+            "columnName": "Memo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowId",
+            "columnName": "RowId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowIdOfSNSAccount",
+            "columnName": "RowIdOfSNSAccount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon.typeString",
+            "columnName": "IconType",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'DEFAULT'"
+          },
+          {
+            "fieldPath": "metadata.creationDate",
+            "columnName": "creationDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.lastModifiedDate",
+            "columnName": "lastModifiedDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.lastConfirmedDate",
+            "columnName": "lastConfirmedDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.views",
+            "columnName": "views",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RowId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3445ba4452b40bc4f67eb4bc120ce1cd')"
+    ]
+  }
+}

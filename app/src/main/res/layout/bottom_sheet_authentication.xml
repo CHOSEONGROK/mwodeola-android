@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/top_guideline"
+        app:layout_constraintGuide_begin="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:text="비밀번호 인증"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/top_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/tv_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:id="@+id/tv_subtitle"
+        android:text="PIN 번호 5자리 숫자를 입력해주세요"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@id/tv_auth_failed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:id="@+id/tv_auth_failed"
+        android:text="인증 오류 횟수(1/10)"
+        android:textColor="@color/red600"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+        app:layout_constraintBottom_toTopOf="@id/toggle_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/toggle_container"
+        app:layout_constraintTop_toBottomOf="@id/tv_auth_failed"
+        app:layout_constraintBottom_toTopOf="@id/key_pad_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/plus_small_128"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:tint="@color/gray800"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:background="@drawable/bg_password_toggle_selector"
+            style="@style/SecureKeyPadBottomSheet.PasswordToggle"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/key_pad_guideline"
+        app:layout_constraintGuide_end="300dp"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/view_pager2"
+        app:layout_constraintTop_toTopOf="@id/key_pad_guideline"
+        app:layout_constraintBottom_toTopOf="@id/btn_biometric_auth_confirmed"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/btn_biometric_auth_confirmed"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/btn_biometric_auth_confirmed_icon"
+            app:srcCompat="@drawable/check_circle"
+            app:tint="@color/gray400"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/btn_biometric_auth_confirmed_label"
+            android:text="다음부터 지문 인증 사용하기"
+            android:textSize="17sp"
+            android:textColor="@color/gray400"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/bottom_guideline"
+        app:layout_constraintGuide_end="12dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

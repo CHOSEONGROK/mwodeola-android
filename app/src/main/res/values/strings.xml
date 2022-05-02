@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">뭐더라</string>
+    <string name="autofill_service_name">뭐더라 Pass</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="main_activity_autofill_setting_label">
+        앱에서 사용자 이름과 비밀번호를 자동으로 입력하려면
+        설정에서 "뭐더라 자동 완성" 기능을 선택하세요.
+    </string>
+
+    <!-- SettingsAppLockActivity's string -->
+    <string name="settings_screen_lock_activity_textview_screen_lock_enable">앱 잠금 사용 중</string>
+    <string name="settings_screen_lock_activity_textview_screen_lock_disable">앱 잠금 사용 안 함</string>
+    <string name="settings_screen_lock_activity_textview_password">비밀번호</string>
+    <string name="settings_screen_lock_activity_textview_pin_number_5">PIN 번호(5자리)</string>
+    <string name="settings_screen_lock_activity_textview_pin_number_6">PIN 번호(6자리)</string>
+    <string name="settings_screen_lock_activity_textview_pattern">패턴</string>
+    <string name="settings_screen_lock_activity_textview_finger_print">지문 인식</string>
+
+    <!-- ScreenLockKeyPadActivity's string -->
+    <string name="screen_lock_key_pad_activity_wrong_password">비밀번호가 올바르지 않습니다\n다시 확인해주세요</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>

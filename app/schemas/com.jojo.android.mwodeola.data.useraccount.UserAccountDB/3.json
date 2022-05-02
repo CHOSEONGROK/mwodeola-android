@@ -1,0 +1,88 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "de255f6ded704ce0dc08fe9580f56334",
+    "entities": [
+      {
+        "tableName": "UserAccount",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AccountName` TEXT NOT NULL, `PackageName` TEXT, `UserID` TEXT NOT NULL, `UserPassword` TEXT NOT NULL, `RowId` INTEGER NOT NULL, `creationDate` TEXT NOT NULL, `lastConfirmedDate` TEXT NOT NULL, `lastModifiedDate` TEXT NOT NULL, `views` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, PRIMARY KEY(`RowId`))",
+        "fields": [
+          {
+            "fieldPath": "accountName",
+            "columnName": "AccountName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "packageName",
+            "columnName": "PackageName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userID",
+            "columnName": "UserID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userPassword",
+            "columnName": "UserPassword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowId",
+            "columnName": "RowId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.creationDate",
+            "columnName": "creationDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.lastConfirmedDate",
+            "columnName": "lastConfirmedDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.lastModifiedDate",
+            "columnName": "lastModifiedDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.views",
+            "columnName": "views",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadata.isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RowId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'de255f6ded704ce0dc08fe9580f56334')"
+    ]
+  }
+}

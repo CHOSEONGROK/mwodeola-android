@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_a25">#40FFFFFF</color>
+    <color name="white_a30">#4DFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- App Theme Color -->
+    <color name="app_theme_color">#3182F7</color>
+    <color name="app_theme_color_light">#84B3F7</color>
+    <color name="app_theme_color_dark">#0052F7</color>
+    <color name="app_theme_secondary_color">#FF527E</color>
+
+    <!-- App Theme Color alpha -->
+    <color name="app_theme_color_a10">#1A3182F7</color>
+    <color name="app_theme_color_a30">#4D3182F7</color>
+    <color name="app_theme_color_a50">#803182F7</color>
+    <color name="app_theme_color_a70">#B33182F7</color>
+    <color name="app_theme_secondary_color_a10">#1AFF527E</color>
+    <color name="app_theme_secondary_color_a30">#4DFF527E</color>
+    <color name="app_theme_secondary_color_a50">#80FF527E</color>
+    <color name="app_theme_secondary_color_a70">#B3FF527E</color>
+
+    <!-- Day & Night Color -->
+    <color name="day_theme_color">#7CB2F2</color>
+    <color name="night_theme_color">#3D4470</color>
+
+    <!-- Error Color -->
+    <color name="error_color">@android:color/holo_red_light</color>
+
+    <!-- App Theme Ripple Color -->
+    <color name="app_theme_ripple_color">#B3CDF7</color>
+    <color name="app_theme_ripple_secondary_color">#FFCDD2</color>
+
+    <!-- Shimmer Item Color -->
+    <color name="shimmer_item_color">@color/gray400</color>
+
+    <!-- Custom Color -->
+    <color name="achromatic_color">#CCCCCC</color>
+    <color name="disabled_color">@color/achromatic_color</color>
+
+    <!-- Authentication Screen Background Color -->
+    <color name="authentication_screen_background_color">#343D4C</color>
+
+    <!-- TextView Text Default Color -->
+    <color name="text_view_text_default_color">#808080</color>
+
+    <!-- Default Divider Color -->
+    <color name="divider_color_default">@color/gray400</color>
+
+    <color name="sns_kakao_theme_color">#FAE100</color>
+    <color name="sns_kakao_text_color">#3B1E1E</color>
+    <color name="sns_naver_theme_color">#03C75A</color>
+    <color name="sns_google_theme_border_color">#4285F4</color>
+    <color name="sns_facebook_theme_color">#1877F2</color>
+    <color name="sns_line_theme_color">#06C755</color>
+    <color name="sns_twitter_theme_color">#1D9BF0</color>
+
+    <!-- 2014 Material Design color palettes -->
+    <color name="gray50">#FAFAFA</color>
+    <color name="gray100">#F5F5F5</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray250">#EAEAEA</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray500">#9E9E9E</color>
+    <color name="gray600">#757575</color>
+    <color name="gray600_a20">#33757575</color>
+    <color name="gray700">#616161</color>
+    <color name="gray800">#424242</color>
+    <color name="gray900">#212121</color>
+    <color name="grayA900">#99212121</color>
+
+    <color name="blue50">#E3F2FD</color>
+    <color name="blue100">#BBDEFB</color>
+    <color name="blue200">#90CAF9</color>
+    <color name="blue300">#64B5F6</color>
+    <color name="blue400">#42A5F5</color>
+    <color name="blue400A">#8042A5F5</color>
+    <color name="blue500">#2196F3</color>
+    <color name="blue600">#1E88E5</color>
+    <color name="blue700">#1976D2</color>
+    <color name="blue800">#1565C0</color>
+    <color name="blue900">#0D47A1</color>
+    <color name="blueA100">#82B1FF</color>
+    <color name="blueA200">#448AFF</color>
+    <color name="blueA300">#2979FF</color>
+    <color name="blueA400">#2962FF</color>
+
+    <color name="red50">#FFEBEE</color>
+    <color name="red100">#FFCDD2</color>
+    <color name="red200">#EF9A9A</color>
+    <color name="red300">#E57373</color>
+    <color name="red400">#EF5350</color>
+    <color name="red500">#F44336</color>
+    <color name="red600">#E53935</color>
+    <color name="red700">#D32F2F</color>
+    <color name="red800">#C62828</color>
+    <color name="red900">#B71C1C</color>
+    <color name="redA100">#FF8A80</color>
+    <color name="redA200">#FF5252</color>
+    <color name="redA400">#FF1744</color>
+    <color name="redA700">#D50000</color>
+
+    <color name="yellow50">#FFFDE7</color>
+    <color name="yellow100">#FFF9C4</color>
+    <color name="yellow200">#FFF59D</color>
+    <color name="yellow300">#FFF176</color>
+    <color name="yellow400">#FFEE58</color>
+    <color name="yellow500">#FFEB3B</color>
+    <color name="yellow600">#FDD835</color>
+    <color name="yellow700">#FBC02D</color>
+    <color name="yellow800">#F9A825</color>
+    <color name="yellow900">#F57F17</color>
+    <color name="yellowA100">#FFFF8D</color>
+    <color name="yellowA200">#FFFF00</color>
+    <color name="yellowA400">#FFEA00</color>
+    <color name="yellowA700">#FFD600</color>
+
+    <color name="green50">#E8F5E9</color>
+    <color name="green100">#C8E6C9</color>
+    <color name="green200">#A5D6A7</color>
+    <color name="green300">#81C784</color>
+    <color name="green400">#66BB6A</color>
+    <color name="green500">#4CAF50</color>
+    <color name="green600">#43A047</color>
+    <color name="green700">#388E3C</color>
+    <color name="green800">#2E7D32</color>
+    <color name="green900">#1B5E20</color>
+    <color name="greenA100">#B9F6CA</color>
+    <color name="greenA200">#69F0AE</color>
+    <color name="greenA400">#00E676</color>
+    <color name="greenA700">#00C853</color>
+
+    <color name="teal50">#E0F2F1</color>
+    <color name="teal100">#B2DFDB</color>
+    <color name="teal200">#80CBC4</color>
+    <color name="teal300">#4DB6AC</color>
+    <color name="teal400">#26A69A</color>
+    <color name="teal500">#009688</color>
+    <color name="teal600">#00897B</color>
+    <color name="teal700">#00796B</color>
+    <color name="teal800">#00695C</color>
+    <color name="teal900">#004D40</color>
+    <color name="tealA100">#A7FFEB</color>
+    <color name="tealA200">#64FFDA</color>
+    <color name="tealA400">#1DE9B6</color>
+    <color name="tealA700">#00BFA5</color>
+
+    <color name="orange50">#FFF3E0</color>
+    <color name="orange100">#FFE0B2</color>
+    <color name="orange200">#FFCC80</color>
+    <color name="orange300">#FFB74D</color>
+    <color name="orange400">#FFA726</color>
+    <color name="orange500">#FF9800</color>
+    <color name="orange600">#FB8C00</color>
+    <color name="orange700">#F57C00</color>
+    <color name="orange800">#EF6C00</color>
+    <color name="orange900">#E65100</color>
+    <color name="orangeA100">#FFD180</color>
+    <color name="orangeA200">#FFAB40</color>
+    <color name="orangeA400">#FF9100</color>
+    <color name="orangeA700">#FF6D00</color>
+
+    <!-- Material Color Palette -->
+    <color name="material_light_blue_50">#e1f5fe</color>
+    <color name="material_light_blue_50_light">#ffffff</color>
+    <color name="material_light_blue_50_dark">#afc2cb</color>
+    <color name="material_light_blue_100">#b3e5fc</color>
+    <color name="material_light_blue_100_light">#e6ffff</color>
+    <color name="material_light_blue_100_dark">#82b3c9</color>
+
+    <color name="material_light_green_100">#dcedc8</color>
+    <color name="material_light_green_100_light">#dcedc8</color>
+    <color name="material_light_green_100_dark">#aabb97</color>
+    <color name="material_light_green_200">#c5e1a5</color>
+    <color name="material_light_green_200_light">#f8ffd7</color>
+    <color name="material_light_green_200_dark">#94af76</color>
+    <color name="material_light_green_300">#aed581</color>
+    <color name="material_light_green_300_light">#e1ffb1</color>
+    <color name="material_light_green_300_dark">#7da453</color>
+
+    <color name="material_light_green_900">#33691e</color>
+    <color name="material_light_green_900_light">#629749</color>
+    <color name="material_light_green_900_dark">#003d00</color>
+
+
+    <!-- ScreenLockKeyPadActivity's Colors -->
+    <color name="screen_lock_key_pad_activity_background">#3B4549</color>
+<!--#3B4549: Origin -->
+<!--#2B2B2B: Android Studio -->
+<!--#142A35: 푸른빛 -->
+<!--#23262C-->
+<!--#292929-->
+<!--#222222-->
+    <color name="screen_lock_key_pad_activity_toggle">#505C61</color>
+    <color name="screen_lock_key_pad_activity_forgot_password">#5B6A70</color>
+
+
+    <declare-styleable name="MaterialRippleLayout">
+        <attr format="color" localization="suggested" name="mrl_rippleColor"/>
+        <attr format="dimension" localization="suggested" name="mrl_rippleDimension"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleOverlay"/>
+        <attr format="float" localization="suggested" name="mrl_rippleAlpha"/>
+        <attr format="integer" localization="suggested" name="mrl_rippleDuration"/>
+        <attr format="integer" localization="suggested" name="mrl_rippleFadeDuration"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleHover"/>
+        <attr format="color" localization="suggested" name="mrl_rippleBackground"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleDelayClick"/>
+        <attr format="boolean" localization="suggested" name="mrl_ripplePersistent"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleInAdapter"/>
+        <attr format="dimension" localization="suggested" name="mrl_rippleRoundedCorners"/>
+    </declare-styleable>
+
+</resources>

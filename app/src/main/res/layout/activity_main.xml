@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_app_logo"
+        android:text="뭐더라"
+        android:textSize="30sp"
+        android:textColor="@color/app_theme_color"
+        android:fontFamily="@font/app_theme_font_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/top_bar_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        android:src="@drawable/question_logo_256px"
+        app:tint="@color/app_theme_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/top_bar_guideline"
+        app:layout_constraintStart_toEndOf="@id/tv_app_logo"/>
+
+    <ImageView
+        style="?actionButtonStyle"
+        android:layout_width="?actionBarSize"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/btn_settings"
+        android:src="@drawable/round_settings_black_24dp"
+        app:tint="@color/text_view_text_default_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/top_bar_guideline"
+        app:layout_constraintGuide_begin="?actionBarSize"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/start_guideline"
+        app:layout_constraintGuide_begin="24dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/end_guideline"
+        app:layout_constraintGuide_end="24dp"/>
+
+    <!-- Autofill Setting Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="36dp"
+        android:id="@+id/container_autofill_setting"
+        android:background="@drawable/bg_round_corner_20"
+        app:layout_constraintTop_toTopOf="@id/top_bar_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/main_activity_autofill_setting_label"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:id="@+id/btn_autofill_after_setting"
+            android:text="나중에"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_autofill_setting"
+            app:layout_constraintEnd_toStartOf="@id/btn_autofill_setting"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="6dp"
+            android:padding="10dp"
+            android:id="@+id/btn_autofill_setting"
+            android:text="상세설정"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Show AccountInServer Touch Area. -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:id="@+id/container_show_account"
+        android:background="@drawable/bg_round_corner_20"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/container_show_credit_card"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"/>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:id="@+id/iv_account_icon"
+        android:src="@drawable/outline_person_24"
+        app:tint="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="@id/container_show_account"
+        app:layout_constraintBottom_toBottomOf="@id/container_show_account"
+        app:layout_constraintStart_toStartOf="@id/container_show_account"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:id="@+id/tv_account_label"
+        android:hint="계정 (0)"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/app_theme_font_bold"
+        app:layout_constraintTop_toTopOf="@id/container_show_account"
+        app:layout_constraintBottom_toBottomOf="@id/container_show_account"
+        app:layout_constraintStart_toEndOf="@id/iv_account_icon"/>
+
+    <!-- Show Credit Card Touch Area. -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="26dp"
+        android:id="@+id/container_show_credit_card"
+        android:background="@drawable/bg_round_corner_20"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/container_show_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"/>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:padding="1dp"
+        android:id="@+id/iv_credit_card_icon"
+        android:src="@drawable/outline_credit_card_24"
+        app:tint="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="@id/container_show_credit_card"
+        app:layout_constraintBottom_toBottomOf="@id/container_show_credit_card"
+        app:layout_constraintStart_toStartOf="@id/container_show_credit_card"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:id="@+id/tv_credit_card_label"
+        android:hint="신용/체크카드 (0)"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/app_theme_font_regular"
+        app:layout_constraintTop_toTopOf="@id/container_show_credit_card"
+        app:layout_constraintBottom_toBottomOf="@id/container_show_credit_card"
+        app:layout_constraintStart_toEndOf="@id/iv_credit_card_icon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

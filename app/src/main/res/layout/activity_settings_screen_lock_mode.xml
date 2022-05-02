@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/btn_back"
+        android:src="@drawable/outline_arrow_back_24"
+        app:tint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/actionButtonStyle"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="24dp"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_title"
+        android:text="화면 잠금 방식"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="12dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:id="@+id/switch_screen_lock"
+        android:text="화면 잠금 사용 안 함"
+        android:textSize="17sp"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:id="@+id/tv_switch_screen_lock_help_text"
+        android:text="앱 시작시에만"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/switch_screen_lock"
+        app:layout_constraintStart_toStartOf="@id/switch_screen_lock"/>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:id="@+id/settings_container"
+        app:layout_constraintTop_toBottomOf="@id/switch_screen_lock">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="24dp"
+            android:id="@+id/tv_auth_type_header"
+            android:text="화면 잠금 인증 방식"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/switch_screen_lock"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_group_authentication_type">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/toggle_auth_type_app_credential"
+                android:text="앱 비밀번호"
+                android:foreground="?attr/selectableItemBackground"
+                style="@style/SettingsActivity.RadioButton.LeftText"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/toggle_auth_type_device_credential"
+                android:text="휴대폰의 화면 잠금과 동일한 방식"
+                android:foreground="?attr/selectableItemBackground"
+                style="@style/SettingsActivity.RadioButton.LeftText"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dividerInsetStart="24dp"
+            app:dividerInsetEnd="24dp"
+            app:dividerThickness="1dp"
+            app:dividerColor="@color/gray100"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="24dp"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_screen_lock_timeout_header"
+            android:text="화면 잠금 작동 시간"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/switch_screen_lock"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:id="@+id/btn_screen_lock_timeout"
+            android:foreground="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="화면 잠금 작동 시간"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:id="@+id/tv_screen_lock_timeout"
+                android:text="20초"
+                android:textSize="17sp"
+                android:textColor="@color/app_theme_color"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

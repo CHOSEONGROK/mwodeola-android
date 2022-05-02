@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jojo.android.mwodeola">
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 다른 앱 위에 그리기 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mwodeola"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".presentation.intro.IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Sign -->
+        <activity android:name=".presentation.users.sign.SignActivity"/>
+
+        <!-- Main -->
+        <activity android:name=".presentation.main.MainActivity"/>
+
+        <!-- DrawerActivity -->
+        <activity android:name=".presentation.drawer.DrawerActivity"/>
+
+        <!-- Account -->
+        <activity android:name=".presentation.account.datalist.search.SearchAccountActivity"/>
+        <activity
+            android:name=".presentation.account.create.CreateNewAccountActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".presentation.account.detail.AccountDetailActivity"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".presentation.account.edit.EditAccountActivity"
+            android:windowSoftInputMode="adjustNothing"/>
+
+        <!-- UserAccount -->
+        <activity android:name=".presentation.account.info.AccountInfoActivity"/>
+        <activity
+            android:name=".presentation.account.create.iconselect.AccountIconSelectActivity"
+            android:theme="@style/Transparent"/>
+
+        <!-- CreditCard -->
+        <activity android:name=".presentation.creditcard.save.CreditCardSavingActivity" />
+
+        <!-- Authentication Screen -->
+        <activity android:name=".presentation.security.screenLock.ScreenLockBlurActivity"/>
+        <activity android:name=".presentation.security.screen.pin5.Pin5AuthenticationActivity"/>
+        <activity android:name=".presentation.security.screen.pin6.Pin6AuthenticationActivity"/>
+        <activity android:name=".presentation.security.screen.pattern.PatternAuthenticationActivity"/>
+
+        <!-- Settings -->
+        <activity android:name=".presentation.settings.SettingsActivity" />
+
+        <!-- Autofill -->
+        <activity
+            android:name=".autofill.auth.AutofillAuthActivity"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:name=".autofill.settings.AutofillSettingsActivity" />
+
+        <service
+            android:name=".autofill.MyAutofillService"
+            android:label="@string/autofill_service_name"
+            android:permission="android.permission.BIND_AUTOFILL_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.autofill.AutofillService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.autofill"
+                android:resource="@xml/autofill_service_configuration" />
+        </service>
+
+        <!-- 플로팅 서비스 -->
+        <service
+            android:name=".service.FloatingService"
+            android:enabled="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW" />
+
+        <!-- 플로팅 서비스 -->
+        <service
+            android:name=".service.FloatingCaptureService"
+            android:enabled="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    </application>
+
+</manifest>

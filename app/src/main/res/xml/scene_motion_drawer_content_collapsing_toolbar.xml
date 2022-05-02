@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="250"
+        motion:motionInterpolator="linear">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@id/btn_search"/>
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@id/btn_delete"/>
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@id/btn_back_drop"/>
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <!-- Tool Bar -->
+        <Constraint
+            android:id="@id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Title Large Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/title_large_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintVertical_chainStyle="packed"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/subtitle_large_sizing_helper"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Title Small Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:id="@id/title_small_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Subtitle Large Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/subtitle_large_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toBottomOf="@id/title_large_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Subtitle Small Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/subtitle_small_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintBottom_toBottomOf="@id/title_small_sizing_helper"
+            motion:layout_constraintStart_toEndOf="@id/title_small_sizing_helper"/>
+
+        <!-- Title -->
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="@id/title_large_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="@id/title_large_sizing_helper"
+            motion:layout_constraintStart_toStartOf="@id/title_large_sizing_helper"
+            motion:layout_constraintEnd_toEndOf="@id/title_large_sizing_helper">
+
+        </Constraint>
+
+        <!-- Subtitle -->
+        <Constraint
+            android:id="@id/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/subtitle_large_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="@id/subtitle_large_sizing_helper"
+            motion:layout_constraintStart_toStartOf="@id/subtitle_large_sizing_helper"
+            motion:layout_constraintEnd_toEndOf="@id/subtitle_large_sizing_helper">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/btn_back_drop"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginEnd="50dp"
+            android:visibility="gone"
+            android:alpha="0"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+            android:id="@id/btn_search"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:visibility="gone"
+            android:alpha="0"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toStartOf="@id/btn_back_drop"/>
+
+        <Constraint
+            android:id="@id/btn_delete"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:visibility="gone"
+            android:alpha="0"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toStartOf="@id/btn_search"/>
+
+        <Constraint
+            android:id="@id/check_box_select_all_container"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="6dp"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintStart_toStartOf="parent"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <!-- Tool Bar -->
+        <Constraint
+            android:id="@id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Title Large Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/title_large_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintVertical_chainStyle="packed"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/subtitle_large_sizing_helper"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Title Small Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginStart="60dp"
+            android:id="@id/title_small_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Subtitle Large Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/subtitle_large_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toBottomOf="@id/title_large_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Subtitle Small Sizing Helper -->
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:id="@id/subtitle_small_sizing_helper"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintBottom_toBottomOf="@id/title_small_sizing_helper"
+            motion:layout_constraintStart_toEndOf="@id/title_small_sizing_helper"/>
+
+        <!-- Title -->
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="@id/title_small_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="@id/title_small_sizing_helper"
+            motion:layout_constraintStart_toStartOf="@id/title_small_sizing_helper"
+            motion:layout_constraintEnd_toEndOf="@id/title_small_sizing_helper">
+
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="@color/black"/>
+
+        </Constraint>
+
+        <!-- Subtitle -->
+        <Constraint
+            android:id="@id/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/subtitle_small_sizing_helper"
+            motion:layout_constraintBottom_toBottomOf="@id/subtitle_small_sizing_helper"
+            motion:layout_constraintStart_toStartOf="@id/subtitle_small_sizing_helper"
+            motion:layout_constraintEnd_toEndOf="@id/subtitle_small_sizing_helper">
+
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="@color/black"/>
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/btn_back_drop"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginEnd="10dp"
+            android:visibility="visible"
+            android:alpha="1"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+            android:id="@id/btn_search"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:visibility="visible"
+            android:alpha="1"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toStartOf="@id/btn_back_drop"/>
+
+        <Constraint
+            android:id="@id/btn_delete"
+            android:layout_width="42dp"
+            android:layout_height="?actionBarSize"
+            android:visibility="visible"
+            android:alpha="1"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintEnd_toStartOf="@id/btn_search"/>
+
+        <Constraint
+            android:id="@id/check_box_select_all_container"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="6dp"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintTop_toTopOf="@id/tool_bar"
+            motion:layout_constraintBottom_toBottomOf="@id/tool_bar"
+            motion:layout_constraintStart_toStartOf="parent"/>
+
+    </ConstraintSet>
+
+</MotionScene>

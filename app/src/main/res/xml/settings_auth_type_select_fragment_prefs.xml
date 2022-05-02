@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jojo.android.mwodeola.presentation.settings.custom.RadioGroupPreference
+        app:key="radio_group"
+        app:title="인증 방식"
+        app:allowDividerBelow="true">
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="PIN_5"
+            app:title="PIN5"
+            app:summary="등록됨, 마스터 비밀번호"
+            app:icon="@drawable/outline_pin_black_24dp"/>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="PIN_6"
+            app:title="PIN6"
+            app:summary="등록 안 됨"
+            app:icon="@drawable/outline_pin_black_24dp"/>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="PATTERN"
+            app:title="패턴 비밀번호"
+            app:summary="등록 안 됨"
+            app:icon="@drawable/round_pattern_black_24dp"/>
+
+        <com.jojo.android.mwodeola.presentation.settings.custom.RadioButtonPreference
+            app:key="BIOMETRIC"
+            app:title="지문 인증"
+            app:summary="등록 안 됨"
+            app:icon="@drawable/baseline_fingerprint_black_24dp"/>
+
+    </com.jojo.android.mwodeola.presentation.settings.custom.RadioGroupPreference>
+
+    <PreferenceCategory
+        app:title="수정/삭제">
+
+        <Preference
+            app:key="change"
+            app:title="변경하기"/>
+
+        <Preference
+            app:key="delete"
+            app:title="삭제하기"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,56 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="개인/보안">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="내 정보"
+            app:icon="@drawable/outline_person_24"
+            app:iconSpaceReserved="false"/>
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <Preference
+            app:key="hi"
+            app:title="hello"
+            app:icon="@drawable/outline_credit_card_24"/>
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+    <CheckBoxPreference
+        />
+
+    <DropDownPreference/>
+
+    <MultiSelectListPreference>
+
+    </MultiSelectListPreference>
+
+    <SeekBarPreference/>
+
+
+
+
+</PreferenceScreen>

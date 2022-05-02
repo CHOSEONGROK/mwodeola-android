@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/action_favorite"
+        android:title="즐겨찾기"
+        android:icon="@drawable/favorite_star_empty"/>
+
+    <item android:id="@+id/action_edit"
+        android:title="편집"
+        android:icon="@drawable/edit_pen_160"/>
+
+    <item android:id="@+id/action_share"
+        android:title="공유"
+        android:icon="@drawable/baseline_share_24"/>
+
+    <item android:id="@+id/action_delete"
+        android:title="삭제"
+        android:icon="@drawable/delete_icon"/>
+
+<!--    <item android:id="@+id/action_more2"-->
+<!--        android:title="더보기2"-->
+<!--        android:icon="@drawable/the_more_icon"-->
+<!--        app:showAsAction="ifRoom"/>-->
+
+<!--    <item android:id="@+id/action_more3"-->
+<!--        android:title="더보기3"-->
+<!--        android:icon="@drawable/the_more_icon"-->
+<!--        app:showAsAction="ifRoom"/>-->
+
+<!--    <item android:id="@+id/action_more4"-->
+<!--        android:title="더보기4"-->
+<!--        android:icon="@drawable/the_more_icon"-->
+<!--        app:showAsAction="ifRoom"/>-->
+
+<!--    <item android:id="@+id/action_delete"-->
+<!--        android:title="삭제"-->
+<!--        android:icon="@drawable/the_more_icon"-->
+<!--        app:showAsAction="ifRoom"/>-->
+</menu>

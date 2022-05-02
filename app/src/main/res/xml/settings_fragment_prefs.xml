@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:title="개인/보안">
+
+        <Preference
+            app:key="user_info"
+            app:title="내 정보"
+            app:icon="@drawable/baseline_person_teal_400_24dp"
+            app:widgetLayout="@layout/prefs_end_widget_arrow_forward"/>
+
+        <Preference
+            app:key="auth_and_security"
+            app:title="인증 및 보안"
+            app:icon="@drawable/baseline_security_teal_400_24dp"
+            app:widgetLayout="@layout/prefs_end_widget_arrow_forward"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="일반">
+
+        <SwitchPreferenceCompat
+            app:key="autofill_service"
+            app:title="뭐더라 Pass 설정하기"
+            app:summary="다른 앱에서 로그인하는 경우 아이디와 비밀번호를 자동으로 입력해줍니다."/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- layout_constraintHeight_min: (12dp * 2) + (74dp * 3) = 246dp -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:id="@+id/card_view"
+        app:layout_constraintHeight_min="246dp"
+        app:rippleColor="@color/app_theme_color_a10"
+        app:cardBackgroundColor="@color/material_light_green_100"
+        app:strokeColor="@color/material_light_green_200"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:id="@+id/content_container">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scroll_view"
+                app:layout_constraintHeight_max="400dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottom_barrier">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="false">
+
+                    <!-- 아이디 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:id="@+id/user_id_container">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:id="@+id/user_id_icon"
+                            app:srcCompat="@drawable/outline_person_24"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:id="@+id/user_id_label"
+                            android:text="아이디"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user_id_icon"
+                            app:layout_constraintBottom_toTopOf="@id/tv_user_id"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.TextView"
+                            android:id="@+id/tv_user_id"
+                            android:text="User ID"
+                            android:singleLine="true"
+                            app:layout_constraintTop_toBottomOf="@id/user_id_label"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user_id_icon"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:id="@+id/user_password_container">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/AccountDetailActivity.Divider"
+                            android:id="@+id/user_password_divider"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/user_password_label"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:id="@+id/user_password_icon"
+                            app:srcCompat="@drawable/outline_password_black_48"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:id="@+id/user_password_label"
+                            android:text="비밀번호"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/tv_layout_user_password"
+                            app:layout_constraintStart_toEndOf="@id/user_password_icon"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/AccountDetailActivity.TextInputLayout"
+                            android:id="@+id/tv_layout_user_password"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_label"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user_password_icon"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/AccountDetailActivity.TextInputEditText"
+                                android:id="@+id/tv_user_password"
+                                android:text="User Password"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호 PIN4 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:id="@+id/user_password_pin4_container"
+                        android:visibility="visible">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/AccountDetailActivity.Divider"
+                            android:id="@+id/user_password_pin4_divider"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/user_password_pin4_label"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:layout_marginBottom="20dp"
+                            android:id="@+id/user_password_pin4_icon"
+                            app:srcCompat="@drawable/password_pin_icon2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:id="@+id/user_password_pin4_label"
+                            android:text="비밀번호 (PIN4, 숫자 4자리)"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/tv_layout_user_password_pin4"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin4_icon"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/AccountDetailActivity.TextInputLayout"
+                            android:id="@+id/tv_layout_user_password_pin4"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pin4_label"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin4_icon"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/AccountDetailActivity.TextInputEditText"
+                                android:id="@+id/tv_user_password_pin4"
+                                android:text="User Password"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호 PIN6 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:id="@+id/user_password_pin6_container"
+                        android:visibility="visible">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/AccountDetailActivity.Divider"
+                            android:id="@+id/user_password_pin6_divider"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/user_password_pin6_label"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:layout_marginBottom="20dp"
+                            android:id="@+id/user_password_pin6_icon"
+                            app:srcCompat="@drawable/password_pin_icon2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:id="@+id/user_password_pin6_label"
+                            android:text="비밀번호 (PIN6, 숫자 6자리)"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/tv_layout_user_password_pin6"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin6_icon"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/AccountDetailActivity.TextInputLayout"
+                            android:id="@+id/tv_layout_user_password_pin6"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pin6_label"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin6_icon"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/AccountDetailActivity.TextInputEditText"
+                                android:id="@+id/tv_user_password_pin6"
+                                android:text="User Password"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 패턴 비밀번호 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/user_password_pattern_container"
+                        android:visibility="visible"
+                        android:animateLayoutChanges="true">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/AccountDetailActivity.Divider"
+                            android:id="@+id/user_password_pattern_divider"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/user_password_pattern_label"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:layout_marginBottom="0dp"
+                            android:id="@+id/user_password_pattern_icon"
+                            app:srcCompat="@drawable/outline_pattern_black_48"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pattern_guideline"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:id="@+id/user_password_pattern_label"
+                            android:text="패턴 비밀번호"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pattern_guideline"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pattern_icon"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="46dp"
+                            android:layout_height="0dp"
+                            android:padding="8dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:id="@+id/user_password_pattern_expand_button"
+                            app:srcCompat="@drawable/outline_expand_more_black_48"
+                            app:tint="@color/material_light_green_300_dark"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pattern_guideline"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/user_password_pattern_guideline"
+                            app:layout_constraintGuide_begin="74dp"/>
+
+                        <com.jojo.android.mwodeola.presentation.security.bottmSheet.PatternPasswordView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:id="@+id/user_password_pattern_view"
+                            android:visibility="visible"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:editable="false"
+                            app:dotsColor="@color/material_light_green_900"
+                            app:dotsHighlightColor="@color/app_theme_color"
+                            app:strokeColor="@color/app_theme_color"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pattern_label"
+                            app:layout_constraintBottom_toTopOf="@id/user_password_pattern_play_button"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="240dp"
+                            android:id="@+id/user_password_pattern_play_button"
+                            android:text="플레이"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pattern_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="?attr/materialButtonOutlinedStyle"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 메모 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/AccountDetailActivity.Container"
+                        android:id="@+id/memo_container">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/AccountDetailActivity.Divider"
+                            android:id="@+id/memo_divider"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/memo_label"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/AccountDetailActivity.Icon"
+                            android:id="@+id/memo_icon"
+                            android:padding="3dp"
+                            app:srcCompat="@drawable/note_icon2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.Label"
+                            android:layout_marginTop="16dp"
+                            android:id="@+id/memo_label"
+                            android:text="메모"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/memo_icon"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AccountDetailActivity.TextView"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="12dp"
+                            android:id="@+id/tv_memo"
+                            android:inputType="textMultiLine"
+                            android:text="Memo"
+                            app:layout_constraintTop_toBottomOf="@id/memo_label"
+                            app:layout_constraintStart_toEndOf="@id/memo_icon"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottom_barrier"
+                app:constraint_referenced_ids="btn_expand,btn_delete"
+                app:barrierDirection="top"
+                app:barrierAllowsGoneWidgets="true"/>
+
+            <!-- 항목 더 보기 버튼 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/btn_expand"
+                android:visibility="visible"
+                android:background="?attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:dividerThickness="1dp"
+                    app:dividerColor="@color/material_light_green_200"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/btn_expand_label"
+                    android:text="항목 더 보기"
+                    android:textColor="@color/material_light_green_900"
+                    android:textSize="14sp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_expand_icon"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:id="@+id/btn_expand_icon"
+                    app:srcCompat="@drawable/outline_expand_more_black_48"
+                    app:tint="@color/material_light_green_300_dark"
+                    app:layout_constraintStart_toEndOf="@id/btn_expand_label"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 삭제 버튼 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:padding="22dp"
+                android:id="@+id/btn_delete"
+                android:background="@color/red200"
+                android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
+                app:srcCompat="@drawable/delete_icon"
+                app:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/icon"
+        app:layout_constraintTop_toTopOf="@id/card_view"
+        app:layout_constraintBottom_toTopOf="@id/card_view"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jojo.android.mwodeola.service.FloatingCaptureLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/floating_capture_layout"
+    tools:ignore="HardcodedText">
+
+<!--    <TextView-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_margin="12dp"-->
+<!--        android:elevation="20dp"-->
+<!--        android:gravity="center"-->
+<!--        android:id="@+id/button"-->
+<!--        android:text="button"-->
+<!--        android:background="@drawable/bg_round_corner_40"-->
+<!--        android:backgroundTint="@color/appLogoColor"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"/>-->
+<!--&lt;!&ndash;        android:foreground="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivFloatingCapture"
+            android:src="@drawable/credit_card_background"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="FloatingCaptureView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="CHO SEONGROK"
+            android:textColor="@color/black"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_round_corner_40"
+        android:elevation="10dp"
+        android:id="@+id/container"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:id="@+id/btn_expander"
+            android:src="@drawable/outline_add_circle_outline_24"
+            style="?attr/actionButtonStyle"/>
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:id="@+id/btn_reducer"
+            android:src="@drawable/outline_remove_circle_outline_24"
+            style="?attr/actionButtonStyle"/>
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:id="@+id/btn_transparency"
+            android:src="@drawable/outline_visibility_24"
+            style="?attr/actionButtonStyle"/>
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/btnClose"
+            android:src="@drawable/outline_close_24"
+            style="?attr/actionButtonStyle"/>
+
+    </LinearLayout>
+
+
+</com.jojo.android.mwodeola.service.FloatingCaptureLayout>

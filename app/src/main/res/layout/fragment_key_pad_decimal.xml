@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:id="@+id/key_pad_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:text="0"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_column="1"
+            style="@style/SecureKeyPadBottomSheet.Decimal"/>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/outline_arrow_back_24"
+                app:tint="@color/black"/>
+        </FrameLayout>
+    </TableRow>
+
+</TableLayout>

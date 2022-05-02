@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_create">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:id="@+id/scroll_view_container"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/start_guideline"
+                app:layout_constraintGuide_begin="36dp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/end_guideline"
+                app:layout_constraintGuide_end="36dp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/top_label_guideline"
+                app:layout_constraintGuide_begin="100dp"/>
+
+            <!-- Label 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/label1"
+                android:text="새로 만들 계정의"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@id/top_label_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"/>
+
+            <!-- Label 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:id="@+id/label2"
+                android:text="그룹명을 지정해주세요"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/label1"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"/>
+
+            <!-- Main Icon -->
+            <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="36dp"
+                app:layout_goneMarginTop="0dp"
+                android:id="@+id/main_icon"
+                android:visibility="gone"
+                app:icon_text="\?"
+                app:layout_constraintTop_toBottomOf="@id/label2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                app:layout_goneMarginTop="60dp"
+                android:id="@+id/edt_layout_account_group_name"
+                android:hint="그룹명 입력하기"
+                android:textColorHint="@color/text_view_text_default_color"
+                app:endIconMode="custom"
+                app:endIconTint="@android:color/holo_green_light"
+                app:boxBackgroundColor="#80BBDEFB"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeColor="@color/blue400"
+                app:helperTextTextColor="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/main_icon"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edt_account_group_name"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:inputType="text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/edt_layout_account_group_name_virtual_view"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintTop_toTopOf="@id/edt_layout_account_group_name"
+                app:layout_constraintBottom_toBottomOf="@id/edt_layout_account_group_name"
+                app:layout_constraintStart_toStartOf="@id/edt_layout_account_group_name"
+                app:layout_constraintEnd_toEndOf="@id/edt_layout_account_group_name"/>
+
+            <!-- AccountGroup Widget Container -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:id="@+id/group_widget_container"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/edt_layout_account_group_name"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline">
+
+                <!-- 웹 사이트 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/web_url_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    app:srcCompat="@drawable/web_icon"
+                    app:tint="@color/selector_toggle_app_theme_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/web_url_label"
+                    android:text="웹 사이트"
+                    android:textColor="@color/selector_toggle_app_theme_color"
+                    android:textSize="18sp"
+                    android:enabled="false"
+                    app:layout_constraintTop_toTopOf="@id/web_url_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/web_url_icon"
+                    app:layout_constraintStart_toEndOf="@id/web_url_icon"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_layout_web_url"
+                    android:nextFocusDown="@id/edt_layout_user_id"
+                    app:hintEnabled="false"
+                    app:endIconMode="clear_text"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="100"
+                    app:errorEnabled="true"
+                    app:errorIconTint="@color/red400"
+                    app:errorTextColor="@color/red400"
+                    app:boxBackgroundColor="@color/transparent"
+                    app:layout_constraintTop_toBottomOf="@id/web_url_icon"
+                    app:layout_constraintStart_toStartOf="@id/web_url_label"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="0dp"
+                        android:paddingTop="8dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:id="@+id/edt_web_url"
+                        android:hint="https://"
+                        android:textColorHint="@color/disabled_color"
+                        android:inputType="textUri"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Account Detail Card View -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:layout_marginBottom="56dp"
+                android:id="@+id/detail_card_view"
+                android:animateLayoutChanges="true"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/gray100"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:contentPadding="16dp"
+                app:contentPaddingBottom="0dp"
+                app:layout_constraintTop_toBottomOf="@id/group_widget_container"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="true">
+
+                    <!-- 아이디: Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:id="@+id/user_id_container">
+
+                        <!-- 아이디: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/user_id_icon"
+                            app:srcCompat="@drawable/outline_person_24"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/edt_layout_user_id"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!-- 아이디: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:text="아이디"
+                            android:id="@+id/user_id_label"
+                            app:layout_constraintBottom_toBottomOf="@id/user_id_icon"
+                            app:layout_constraintStart_toEndOf="@id/user_id_icon"/>
+
+                        <!-- 아이디: text input layout -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/CreateNewAccountActivity.TextInputLayout.ExposedDropDownMenu"
+                            android:id="@+id/edt_layout_user_id"
+                            android:nextFocusUp="@id/edt_web_url"
+                            android:nextFocusDown="@id/edt_layout_user_password"
+                            app:layout_constraintTop_toBottomOf="@id/user_id_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                style="@style/CreateNewAccountActivity.TextInputEditText"
+                                android:id="@+id/edt_user_id"
+                                android:hint="아이디 입력"
+                                android:inputType="textWebEmailAddress"
+                                android:singleLine="true"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호: Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:id="@+id/user_password_container">
+
+                        <!-- 비밀번호: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/user_password_icon"
+                            app:srcCompat="@drawable/outline_password_black_48"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/edt_layout_user_password"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!-- 비밀번호: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:text="비밀번호"
+                            android:id="@+id/user_password_label"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_icon"
+                            app:layout_constraintStart_toEndOf="@id/user_password_icon"/>
+
+                        <!-- 비밀번호: text input layout -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/CreateNewAccountActivity.TextInputLayout"
+                            android:id="@+id/edt_layout_user_password"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/CreateNewAccountActivity.TextInputEditText"
+                                android:id="@+id/edt_user_password"
+                                android:hint="비밀번호 입력"
+                                android:singleLine="true"
+                                android:inputType="textWebPassword"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호 pin4: Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:id="@+id/user_password_pin4_container"
+                        android:visibility="gone">
+
+                        <!-- 비밀번호 pin4: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/user_password_pin4_icon"
+                            app:srcCompat="@drawable/password_pin_icon2"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/edt_layout_user_password_pin4"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!-- 비밀번호 pin4: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:text="비밀번호 (PIN4, 숫자 4자리)"
+                            android:id="@+id/user_password_pin4_label"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pin4_icon"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin4_icon"/>
+
+                        <!-- 비밀번호 pin4: text input layout -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/CreateNewAccountActivity.TextInputLayout"
+                            android:id="@+id/edt_layout_user_password_pin4"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pin4_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/CreateNewAccountActivity.TextInputEditText"
+                                android:id="@+id/edt_user_password_pin4"
+                                android:hint="숫자 4자리 입력"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:inputType="numberPassword"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 비밀번호 pin6: Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:id="@+id/user_password_pin6_container"
+                        android:visibility="gone">
+
+                        <!-- 비밀번호 pin6: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/user_password_pin6_icon"
+                            app:srcCompat="@drawable/password_pin_icon2"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/edt_layout_user_password_pin6"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!-- 비밀번호 pin6: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:text="비밀번호 (PIN6, 숫자 6자리)"
+                            android:id="@+id/user_password_pin6_label"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pin6_icon"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pin6_icon"/>
+
+                        <!-- 비밀번호 pin6: text input layout -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/CreateNewAccountActivity.TextInputLayout"
+                            android:id="@+id/edt_layout_user_password_pin6"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pin6_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/CreateNewAccountActivity.TextInputEditText"
+                                android:id="@+id/edt_user_password_pin6"
+                                android:hint="숫자 6자리 입력"
+                                android:maxLength="6"
+                                android:singleLine="true"
+                                android:inputType="numberPassword"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 패턴 비밀번호: Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/user_password_pattern_container"
+                        android:visibility="gone">
+
+                        <!-- 패턴 비밀번호: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/user_password_pattern_icon"
+                            app:srcCompat="@drawable/outline_pattern_black_48"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pattern_guideline"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/user_password_pattern_guideline"
+                            app:layout_constraintGuide_begin="46dp"/>
+
+                        <!-- 패턴 비밀번호: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:id="@+id/user_password_pattern_label"
+                            android:text="패턴 비밀번호"
+                            app:layout_constraintBottom_toBottomOf="@id/user_password_pattern_icon"
+                            app:layout_constraintStart_toEndOf="@id/user_password_pattern_icon"/>
+
+                        <!-- 패턴 비밀번호: PatternPasswordView -->
+                        <com.jojo.android.mwodeola.presentation.security.bottmSheet.PatternPasswordView
+                            android:layout_width="240dp"
+                            android:layout_height="240dp"
+                            android:id="@+id/user_password_pattern_view"
+                            android:visibility="visible"
+                            app:dotsColor="@color/black"
+                            app:dotsHighlightColor="@color/app_theme_color"
+                            app:strokeColor="@color/app_theme_color"
+                            app:layout_constraintTop_toBottomOf="@id/user_password_pattern_icon"
+                            app:layout_constraintBottom_toTopOf="@id/user_password_pattern_reset_button"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <!-- 패턴 비밀번호: 다시 입력하기 버튼 -->
+                        <com.google.android.material.button.MaterialButton
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/user_password_pattern_reset_button"
+                            android:text="다시 입력하기"
+                            android:enabled="false"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 메모: container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        style="@style/CreateNewAccountActivity.Container"
+                        android:id="@+id/memo_container">
+
+                        <!-- 메모: icon -->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            style="@style/CreateNewAccountActivity.Icon"
+                            android:id="@+id/memo_icon"
+                            android:padding="2dp"
+                            app:srcCompat="@drawable/note_icon2"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/edt_layout_memo"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!-- 메모: label -->
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/CreateNewAccountActivity.Label"
+                            android:text="메모"
+                            android:id="@+id/memo_label"
+                            app:layout_constraintBottom_toBottomOf="@id/memo_icon"
+                            app:layout_constraintStart_toEndOf="@id/memo_icon"/>
+
+                        <!-- 메모: text input layout -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/CreateNewAccountActivity.TextInputLayout"
+                            android:id="@+id/edt_layout_memo"
+                            app:endIconMode="clear_text"
+                            app:layout_constraintTop_toBottomOf="@id/memo_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/CreateNewAccountActivity.TextInputEditText"
+                                android:id="@+id/edt_memo"
+                                android:hint="메모 입력"
+                                android:inputType="textMultiLine"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/btn_expand"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/transparent"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="30dp"
+                        app:rippleColor="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btn_expand_label"
+                                android:text="항목 더 보기"
+                                android:textSize="13sp"
+                                android:textColor="@color/app_theme_color"/>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="4dp"
+                                android:id="@+id/btn_expand_icon"
+                                app:srcCompat="@drawable/outline_expand_more_black_48"
+                                app:tint="@color/app_theme_color"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SNS Detail Icon -->
+            <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:id="@+id/detail_card_view_top_anchor_icon"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/detail_card_view"
+                app:layout_constraintBottom_toTopOf="@id/detail_card_view"
+                app:layout_constraintStart_toStartOf="@id/detail_card_view"
+                app:layout_constraintEnd_toEndOf="@id/detail_card_view"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!-- Top Bar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/top_bar"
+        android:background="@drawable/bg_top_bar_gradient_white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_horizontal"
+            android:id="@+id/btn_back"
+            android:src="@drawable/outline_arrow_back_24"
+            app:tint="@color/black"
+            style="?attr/actionButtonStyle"/>
+
+    </FrameLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:id="@+id/btn_create"
+        android:text="만들기"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/selector_bottom_rectangle_button"
+        android:enabled="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

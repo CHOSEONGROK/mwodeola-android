@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Label1 -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:id="@+id/tv_label1"
+        android:hint="label1"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Label2 -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:id="@+id/tv_label2"
+        android:hint="label2"
+        android:textSize="17sp"
+        android:textColor="@color/gray700"
+        android:textStyle="normal"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/tv_label1"
+        app:layout_constraintStart_toStartOf="@id/tv_label1"
+        app:layout_constraintEnd_toEndOf="@id/tv_label1"/>
+
+    <!-- SMS Code Input Layout -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:id="@+id/container_sms_auth_number"
+        android:hint="인증 번호(6자리)"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeColor="@color/blue600"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/app_theme_secondary_color"
+        app:counterEnabled="true"
+        app:counterMaxLength="6"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/tv_label2"
+        app:layout_constraintStart_toStartOf="@id/container_user_input"
+        app:layout_constraintEnd_toEndOf="@id/container_user_input">
+
+        <com.jojo.android.mwodeola.presentation.users.FilterableMaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edt_sms_auth_number"
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- User Input Layout(phone, name, email) -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/container_user_input"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeColor="@color/blue600"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/app_theme_secondary_color"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/tv_label2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.jojo.android.mwodeola.presentation.users.FilterableMaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edt_user_input"
+            android:inputType="text"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/btn_sms_auth_retry"
+        android:text="인증문자 다시 받기"
+        android:textSize="18sp"
+        android:backgroundTint="@color/app_theme_secondary_color"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/container_sms_auth_number"
+        app:layout_constraintStart_toStartOf="@id/container_sms_auth_number"
+        app:layout_constraintEnd_toEndOf="@id/container_sms_auth_number"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

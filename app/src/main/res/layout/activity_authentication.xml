@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/authentication_screen_background_color">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/btn_back"
+        android:src="@drawable/outline_arrow_back_24"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/actionButtonStyle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:id="@+id/tv_header"
+        android:text="Header"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintStart_toEndOf="@id/btn_back"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/top_guideline"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/view_pager2"
+        app:layout_constraintTop_toTopOf="@id/top_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/bottom_guideline"
+        app:layout_constraintGuide_end="80dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_biometric_auth_confirmed"
+        android:visibility="invisible"
+        app:icon="@drawable/check_circle"
+        app:iconSize="24dp"
+        app:iconTint="@color/white"
+        android:text="다음부터 지문 인증 사용하기"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:alpha="0.3"
+        style="@style/Widget.Material3.Button.TextButton"
+        app:layout_constraintTop_toTopOf="@id/bottom_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
