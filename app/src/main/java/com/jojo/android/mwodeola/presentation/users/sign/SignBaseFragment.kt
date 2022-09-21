@@ -35,7 +35,6 @@ abstract class SignBaseFragment : BaseFragment(), SignContract.BaseChildView {
     ): View? = binding.root
 
     override fun onSelectedPage(isInitial: Boolean) {
-        Log.d(TAG, "onPageSelected(): isFirst=$isInitial")
         if (isInitial) {
             binding.tvLabel1.visibility = View.VISIBLE
             binding.tvLabel1.animateFadeInWithAfter {
@@ -87,12 +86,12 @@ abstract class SignBaseFragment : BaseFragment(), SignContract.BaseChildView {
             duration = 500
             interpolator = AccelerateDecelerateInterpolator()
             addListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(animation: Animator?) {}
-                override fun onAnimationEnd(animation: Animator?) {
+                override fun onAnimationStart(animation: Animator) {}
+                override fun onAnimationEnd(animation: Animator) {
                     action?.invoke()
                 }
-                override fun onAnimationCancel(animation: Animator?) {}
-                override fun onAnimationRepeat(animation: Animator?) {}
+                override fun onAnimationCancel(animation: Animator) {}
+                override fun onAnimationRepeat(animation: Animator) {}
             })
         }.start()
     }

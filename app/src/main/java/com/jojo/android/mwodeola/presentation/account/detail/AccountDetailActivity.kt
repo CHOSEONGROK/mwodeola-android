@@ -135,8 +135,6 @@ class AccountDetailActivity : BaseActivity(), AccountDetailContract.View {
     }
 
     override fun showAccounts(accounts: AccountGroupAndDetails, position: Int): Unit = with(binding) {
-        Log.d(TAG, "showAccounts(): position=$position")
-
         val ownGroup = accounts.own_group
 
         if (ownGroup.isSnsGroup) {
@@ -156,8 +154,6 @@ class AccountDetailActivity : BaseActivity(), AccountDetailContract.View {
     }
 
     override fun addNewAccountDetail(accountsAfterAdded: AccountGroupAndDetails, position: Int) {
-        Log.d(TAG, "addNewAccountDetail(): position=$position")
-
         viewpagerAdapter.submit(accountsAfterAdded) {
             binding.viewPager2.currentItem = position
         }
@@ -239,19 +235,16 @@ class AccountDetailActivity : BaseActivity(), AccountDetailContract.View {
     }
 
     override fun startCreateNewAccountActivity() {
-        Log.d(TAG, "startCreateNewAccountActivity()")
         launcherForCreate.launch(Intent(this, CreateNewAccountActivity::class.java))
     }
 
     override fun startCreateNewAccountActivityWithSnsDetail(snsAccount: Account) {
-        Log.d(TAG, "startCreateNewAccountActivityWithSnsDetail(): $snsAccount")
         launcherForCreate.launch(Intent(this, CreateNewAccountActivity::class.java).apply {
             putExtra(CreateNewAccountActivity.EXTRA_SNS_ACCOUNT, snsAccount)
         })
     }
 
     override fun startCreateNewAccountActivityForSnsAccount(snsCode: Int) {
-        Log.d(TAG, "startCreateNewAccountActivityForSnsAccount(): $snsCode")
         launcherForCreate.launch(Intent(this, CreateNewAccountActivity::class.java).apply {
             putExtra(CreateNewAccountActivity.EXTRA_SNS_CODE, snsCode)
         })

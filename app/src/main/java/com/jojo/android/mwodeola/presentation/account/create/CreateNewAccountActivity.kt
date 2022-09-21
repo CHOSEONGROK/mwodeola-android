@@ -20,7 +20,6 @@ import com.jojo.android.mwodeola.presentation.BaseActivity
 import com.jojo.android.mwodeola.presentation.account.create.bottomSheet.AppNameSelectBottomSheet
 import com.jojo.android.mwodeola.presentation.account.detail.AccountDetailActivity
 import com.jojo.android.mwodeola.presentation.common.BottomUpDialog
-import com.jojo.android.mwodeola.presentation.common.SquircleIcon
 import com.jojo.android.mwodeola.presentation.security.bottmSheet.PatternPasswordView
 import com.jojo.android.mwodeola.util.dpToPixels
 
@@ -335,10 +334,9 @@ class CreateNewAccountActivity : BaseActivity(), CreateNewAccountContract.View {
                 else "앱과 성공적으로 연동되었습니다."
 
             if (appInfo.icon != null) {
-                binding.mainIcon.setIconImageDrawable(appInfo.icon)
+                binding.mainIcon.setIconImage(appInfo.icon)
             } else {
-                binding.mainIcon.setIconText(appInfo.label)
-                binding.mainIcon.setIconBackgroundColor(SquircleIcon.COLOR_ORANGE)
+                binding.mainIcon.setText(appInfo.label)
             }
 
             if (isShowingWidgets.not()) {

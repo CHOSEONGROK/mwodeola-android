@@ -1,5 +1,7 @@
 package com.jojo.android.mwodeola.presentation
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.jojo.android.mwodeola.presentation.security.screenLock.ScreenLockSubscriber
 
+@SuppressLint("SourceLockedOrientationActivity")
 abstract class BaseActivity : AppCompatActivity(), ScreenLockSubscriber {
 
     abstract override val isScreenLockEnabled: Boolean
@@ -17,8 +20,16 @@ abstract class BaseActivity : AppCompatActivity(), ScreenLockSubscriber {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
-        // window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        //window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        //window.clearFlags()
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        //window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
     override fun setContentView(layoutResID: Int) {

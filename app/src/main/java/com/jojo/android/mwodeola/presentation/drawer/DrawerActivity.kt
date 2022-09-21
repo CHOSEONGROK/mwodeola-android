@@ -135,6 +135,7 @@ class DrawerActivity : BaseActivity(), DrawerContract.View, DrawerOwner {
 
         checkBoxSelectAll.buttonTintList = ColorStateList.valueOf(Color.WHITE)
         checkBoxSelectAllLabel.setTextColor(Color.WHITE)
+        incubatableFab.setChildFabLabelColor(Color.WHITE)
 
         drawerMenuAdapter.setDarkTheme()
     }
@@ -144,6 +145,7 @@ class DrawerActivity : BaseActivity(), DrawerContract.View, DrawerOwner {
 
         checkBoxSelectAll.buttonTintList = ColorStateList.valueOf(darkThemeColor)
         checkBoxSelectAllLabel.setTextColor(darkThemeColor)
+        incubatableFab.setChildFabLabelColor(Color.BLACK)
 
         drawerMenuAdapter.setLightTheme()
     }
@@ -268,6 +270,8 @@ class DrawerActivity : BaseActivity(), DrawerContract.View, DrawerOwner {
             btnBackDrop.setOnClickListener {
                 drawerContent?.sharedWidgetsListener?.onFilterClicked(btnBackDrop)
             }
+
+            incubatableFab.setChildFabLabelColor(Color.WHITE)
         }
 
         drawerMenuAdapter.initView()

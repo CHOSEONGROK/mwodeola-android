@@ -126,7 +126,7 @@ class IntroActivity : BaseActivity(), IntroContract.View {
     private fun initializeWindowSettings() {
         window?.run {
             addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-            addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+            //addFlags(WindowManager.LayoutParams.FLAG_SECURE)
 
 //            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
 //            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)

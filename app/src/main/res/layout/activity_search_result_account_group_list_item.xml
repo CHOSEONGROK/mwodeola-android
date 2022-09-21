@@ -6,12 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="56dp">
 
-    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+    <com.jojo.android.mwodeola.presentation.common.IconView
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:layout_marginEnd="24dp"
         android:id="@+id/icon"
-        app:icon_text_size="10sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="@id/start_guideline"
         app:layout_constraintBottom_toBottomOf="parent"/>

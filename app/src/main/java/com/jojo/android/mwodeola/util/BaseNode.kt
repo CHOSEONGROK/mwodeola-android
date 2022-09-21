@@ -91,10 +91,8 @@ open class BaseNode<T> constructor(
 
     private fun indexOf(target: BaseNode<T>, count: Int): Int {
         if (target == this) {
-//            Log.e(TAG, "indexOf(count=$count): target=(code=${target.hashCode()}, value:${target.value}), this=(code=${this.hashCode()}, value:${this.value}) [target==this!!]")
             return count
         } else {
-//            Log.i(TAG, "indexOf(count=$count): target=(code=${target.hashCode()}, value:${target.value}), this=(code=${this.hashCode()}, value:${this.value})")
             var result = -1
             var temp = count + 1
             for (child in children) {

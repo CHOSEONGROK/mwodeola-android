@@ -104,11 +104,6 @@ class AutofillAuthActivity : AppCompatActivity() {
         val structure = intent.getParcelableExtra<AssistStructure>(AutofillManager.EXTRA_ASSIST_STRUCTURE)
         val packageName = structure?.activityComponent?.packageName
 
-//        Log.i(TAG, "onAuthenticationSucceed(): dataset=$dataset")
-//        Log.i(TAG, "onAuthenticationSucceed(): datasetName=$datasetName")
-//        Log.i(TAG, "onAuthenticationSucceed(): structure=$structure")
-//        Log.i(TAG, "onAuthenticationSucceed(): packageName=$packageName")
-
         val replyIntent = Intent()
         replyIntent.putExtra(AutofillManager.EXTRA_AUTHENTICATION_RESULT, dataset)
 
@@ -183,7 +178,6 @@ class AutofillAuthActivity : AppCompatActivity() {
         internal fun getAuthIntentSenderForDataset(
             context: Context, datasetName: String, dataset: Dataset,
         ): IntentSender {
-            Log.w(TAG, "getAuthIntentSenderForDataset(): $dataset")
             val intent = Intent(context, AutofillAuthActivity::class.java).apply {
                 putExtra(EXTRA_DATASET_NAME, datasetName)
                 putExtra(EXTRA_DATASET, dataset)

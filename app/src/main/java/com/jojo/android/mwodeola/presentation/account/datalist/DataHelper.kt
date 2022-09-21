@@ -87,8 +87,6 @@ object DataHelper {
         private val newList = oldList.toMutableList()
 
         fun add(accountGroup: AccountGroup) = apply {
-            Log.d(TAG, "add(): $accountGroup")
-
             // Special Header: Favorite
             if (accountGroup.is_favorite) {
                 var headerIndex = newList.indexOfFirst { it.header?.title == HEADER_FAVORITE }

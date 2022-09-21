@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/UserAccountIconSelectActivity.Container">
 
-        <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+        <com.jojo.android.mwodeola.presentation.common.IconView
             android:id="@+id/icon_default"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/UserAccountIconSelectActivity.Container">
 
-        <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+        <com.jojo.android.mwodeola.presentation.common.IconView
             android:id="@+id/icon_installed_app"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/UserAccountIconSelectActivity.Container">
 
-        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+        <com.jojo.android.mwodeola.presentation.common.IconView
             android:id="@+id/icon_extracted_from_url"
             android:src="@drawable/outline_question_mark_24"
             app:layout_constraintTop_toTopOf="parent"
@@ -126,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/UserAccountIconSelectActivity.Container">
 
-        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+        <com.jojo.android.mwodeola.presentation.common.IconView
             android:id="@+id/icon_in_server"
             android:src="@drawable/outline_question_mark_24"
             app:layout_constraintTop_toTopOf="parent"
@@ -155,7 +155,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/UserAccountIconSelectActivity.Container">
 
-        <com.jojo.android.mwodeola.presentation.common.SquircleImageView
+        <com.jojo.android.mwodeola.presentation.common.IconView
             android:id="@+id/icon_user_custom"
             android:visibility="invisible"
             app:layout_constraintTop_toTopOf="parent"

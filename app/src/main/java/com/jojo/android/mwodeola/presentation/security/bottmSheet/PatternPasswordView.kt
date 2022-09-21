@@ -524,10 +524,10 @@ class PatternPasswordView @JvmOverloads constructor(
             duration = 130
             repeatCount = 1
             repeatMode = ValueAnimator.REVERSE
-            addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator?) {}
-                override fun onAnimationEnd(animation: Animator?) {}
-            })
+//            addListener(object : AnimatorListenerAdapter() {
+//                override fun onAnimationStart(animation: Animator) {}
+//                override fun onAnimationEnd(animation: Animator) {}
+//            })
         }
         private val animScaleX2 = PropertyValuesHolder.ofFloat(SCALE_X, 1f, 1.5f)
         private val animScaleY2 = PropertyValuesHolder.ofFloat(SCALE_Y, 1f, 1.5f)
@@ -536,10 +536,10 @@ class PatternPasswordView @JvmOverloads constructor(
             duration = 130
             repeatCount = 1
             repeatMode = ValueAnimator.REVERSE
-            addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator?) {}
-                override fun onAnimationEnd(animation: Animator?) {}
-            })
+//            addListener(object : AnimatorListenerAdapter() {
+//                override fun onAnimationStart(animation: Animator) {}
+//                override fun onAnimationEnd(animation: Animator) {}
+//            })
         }
 
         init {

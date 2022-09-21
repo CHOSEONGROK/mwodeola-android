@@ -174,9 +174,7 @@ class FloatingCaptureLayout : ConstraintLayout {
         private var prevSpanX = 0f
         private var prevSpanY = 0f
 
-        override fun onScaleBegin(detector: ScaleGestureDetector?): Boolean {
-            if (detector == null) return super.onScaleBegin(detector)
-
+        override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
             isResizingActivate = true
 
             prevSpanX = detector.previousSpanX
@@ -185,9 +183,8 @@ class FloatingCaptureLayout : ConstraintLayout {
             return super.onScaleBegin(detector)
         }
 
-        override fun onScale(detector: ScaleGestureDetector?): Boolean {
+        override fun onScale(detector: ScaleGestureDetector): Boolean {
 //            Log.i(TAG, "onScale(), curSpan=${detector?.currentSpan}, preSpan=${detector?.previousSpan}")
-            if (detector == null) return super.onScale(detector)
 
             floatingViewGestureListener?.onPinchZoom(
                 (detector.currentSpanX - prevSpanX).toInt(),
@@ -200,7 +197,7 @@ class FloatingCaptureLayout : ConstraintLayout {
             return super.onScale(detector)
         }
 
-        override fun onScaleEnd(detector: ScaleGestureDetector?) {
+        override fun onScaleEnd(detector: ScaleGestureDetector) {
 //            Log.w(TAG, "onScale() End")
 //            isResizingActivate = false
             super.onScaleEnd(detector)

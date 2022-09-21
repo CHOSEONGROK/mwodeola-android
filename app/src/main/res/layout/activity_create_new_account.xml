@@ -68,14 +68,13 @@
                 app:layout_constraintStart_toStartOf="@id/start_guideline"/>
 
             <!-- Main Icon -->
-            <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+            <com.jojo.android.mwodeola.presentation.common.IconView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="36dp"
                 app:layout_goneMarginTop="0dp"
                 android:id="@+id/main_icon"
                 android:visibility="gone"
-                app:icon_text="\?"
                 app:layout_constraintTop_toBottomOf="@id/label2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -535,7 +534,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- SNS Detail Icon -->
-            <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+            <com.jojo.android.mwodeola.presentation.common.IconView
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:id="@+id/detail_card_view_top_anchor_icon"

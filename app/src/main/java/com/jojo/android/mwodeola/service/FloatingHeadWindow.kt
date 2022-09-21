@@ -110,22 +110,6 @@ class FloatingHeadWindow(val context: Context) : FloatingView.Callbacks {
         mAnimator.setValues(xHolder, yHolder)
         mAnimator.duration = 200
         mAnimator.start()
-        mAnimator.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {
-            }
-
-            override fun onAnimationEnd(animation: Animator?) {
-                Log.e("AnimatorListener", "onAnimationEnd")
-            }
-
-            override fun onAnimationCancel(animation: Animator?) {
-                Log.e("AnimatorListener", "onAnimationCancel")
-            }
-
-            override fun onAnimationStart(animation: Animator?) {
-                Log.e("AnimatorListener", "onAnimationStart")
-            }
-        })
     }
 
 

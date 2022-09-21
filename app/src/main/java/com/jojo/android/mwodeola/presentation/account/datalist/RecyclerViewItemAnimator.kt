@@ -26,13 +26,8 @@ class RecyclerViewItemAnimator() : DefaultItemAnimator() {
         toX: Int,
         toY: Int
     ): Boolean {
-//        Log.d(TAG, "animateChange(): oldHolder == newHolder: ${oldHolder == newHolder}")
-//        Log.d(TAG, "animateChange(): adapterPosition=(old=${oldHolder?.adapterPosition}, new=${newHolder?.adapterPosition})")
-
         if (oldHolder == null || newHolder == null || oldHolder == newHolder)
             return super.animateChange(oldHolder, newHolder, fromX, fromY, toX, toY)
-
-        Log.d(TAG, "newHolder.itemView=${newHolder.itemView}")
 
         animateFadeOutAlpha(newHolder)
 
@@ -40,7 +35,6 @@ class RecyclerViewItemAnimator() : DefaultItemAnimator() {
     }
 
     override fun animateAdd(holder: RecyclerView.ViewHolder?): Boolean {
-        // Log.w(TAG, "animateAdd(): adapterPosition=${holder?.adapterPosition}")
         if (holder == null)
             return super.animateAdd(holder)
 
@@ -68,7 +62,6 @@ class RecyclerViewItemAnimator() : DefaultItemAnimator() {
             .setDuration(1000)
             .alpha(0f)
             .withEndAction {
-                Log.e(TAG, "highlightView animation end!!")
                 val view = itemView.findViewWithTag<View>("highlight_view")
                 itemView.removeView(view)
             }

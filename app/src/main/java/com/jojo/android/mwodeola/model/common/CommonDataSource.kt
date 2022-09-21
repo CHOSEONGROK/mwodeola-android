@@ -40,7 +40,6 @@ class CommonDataSource(
         service.getAllDataCount().enqueue(object : Callback<Map<String, Map<String, Int>>> {
             override fun onResponse(call: Call<Map<String, Map<String, Int>>>,
                                     response: Response<Map<String, Map<String, Int>>>) {
-                Log.i(TAG, "getAllDataCount.onResponse(): response=$response")
                 val responseBody = response.body()
 
                 if (response.isSuccessful && responseBody != null) {

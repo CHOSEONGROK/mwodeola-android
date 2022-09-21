@@ -45,8 +45,6 @@ class FirebasePhoneAuth constructor(private val activity: Activity) {
     }
 
     fun send(phoneNumber: String) {
-        Log.d(TAG, "send(): phoneNumber=$phoneNumber")
-
         PhoneAuthProvider.verifyPhoneNumber(
             phoneAuthOptionsBuilder(phoneNumber)
                 .build()
@@ -54,8 +52,6 @@ class FirebasePhoneAuth constructor(private val activity: Activity) {
     }
 
     fun resend(phoneNumber: String) {
-        Log.d(TAG, "resend(): phoneNumber=$phoneNumber")
-
         if (resendingToken != null) {
             PhoneAuthProvider.verifyPhoneNumber(
                 phoneAuthOptionsBuilder(phoneNumber)
@@ -92,8 +88,6 @@ class FirebasePhoneAuth constructor(private val activity: Activity) {
             .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
-
                     val user = task.result?.user
                     val additionalUserInfo = task.result?.additionalUserInfo
                     val authCredential = task.result?.credential
@@ -101,7 +95,6 @@ class FirebasePhoneAuth constructor(private val activity: Activity) {
                     timer.stop()
                 } else {
                     // Sign in failed, display a message and update the UI
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
                     }

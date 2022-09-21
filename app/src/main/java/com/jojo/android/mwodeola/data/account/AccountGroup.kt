@@ -53,8 +53,8 @@ data class AccountGroup(
 
     override fun describeContents(): Int = 0
 
-    override fun writeToParcel(parcel: Parcel?, tag: Int) {
-        parcel?.run {
+    override fun writeToParcel(parcel: Parcel, tag: Int) {
+        parcel.run {
             writeString(id)
             writeInt(sns)
             writeString(group_name)

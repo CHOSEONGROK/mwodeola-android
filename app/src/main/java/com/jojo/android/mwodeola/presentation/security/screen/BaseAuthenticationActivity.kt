@@ -129,7 +129,6 @@ abstract class BaseAuthenticationActivity : BaseActivity(), AuthenticationContra
     }
 
     override fun showBiometricConfirmButton() {
-        Log.e(TAG, "showBiometricConfirmButton()")
         binding.btnBiometricAuthConfirmed.visibility = View.VISIBLE
         binding.btnBiometricAuthConfirmed.setOnClickListener {
             isBiometricConfirmed = !isBiometricConfirmed
@@ -244,7 +243,6 @@ abstract class BaseAuthenticationActivity : BaseActivity(), AuthenticationContra
     }
 
     override fun finish() {
-        Log.d(TAG, "finish()")
         super.finish()
     }
 
@@ -290,7 +288,7 @@ abstract class BaseAuthenticationActivity : BaseActivity(), AuthenticationContra
     private fun initWindowProperties() {
         window.run {
             addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-            addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+            //addFlags(WindowManager.LayoutParams.FLAG_SECURE)
 
             Compat.setDefaultStatusBar(window)
 

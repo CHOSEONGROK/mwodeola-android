@@ -93,8 +93,6 @@ class AutofillFieldMetadata private constructor(
         private const val TAG = "AutofillFieldMetadata"
 
         fun getInstance(viewNode: AssistStructure.ViewNode): AutofillFieldMetadata? {
-            Log.i(TAG, "getInstance():\n${viewNode.toStringForLog()}")
-
             if (viewNode.autofillType == View.AUTOFILL_TYPE_NONE &&
                 viewNode.autofillHints == null) {
                 return null

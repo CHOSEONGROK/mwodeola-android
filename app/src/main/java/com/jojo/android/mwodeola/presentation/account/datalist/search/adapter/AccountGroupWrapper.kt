@@ -2,16 +2,15 @@ package com.jojo.android.mwodeola.presentation.account.datalist.search.adapter
 
 import android.content.Context
 import android.content.pm.PackageManager
-import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.text.SpannableString
-import android.text.SpannableStringBuilder
+import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
 import com.jojo.android.mwodeola.R
 import com.jojo.android.mwodeola.data.account.AccountGroup
 import com.jojo.android.mwodeola.presentation.account.datalist.search.FuzzyMatcher
-import com.jojo.android.mwodeola.presentation.common.SquircleIcon
+import com.jojo.android.mwodeola.presentation.common.IconView
 
 class AccountGroupWrapper(
     val group: AccountGroup
@@ -40,7 +39,7 @@ class AccountGroupWrapper(
                 4 -> R.drawable.sns_google_icon_white_320
                 5 -> R.drawable.sns_facebook_icon
                 6 -> R.drawable.sns_twitter_icon
-                else -> SquircleIcon.NO_ID
+                else -> View.NO_ID
             }
             iconDrawable = ResourcesCompat.getDrawable(context.resources, resId, null)
         } else {
@@ -50,11 +49,11 @@ class AccountGroupWrapper(
         }
     }
 
-    fun applyIcon(icon: SquircleIcon) {
+    fun applyIcon(icon: IconView) {
         if (iconDrawable != null) {
-            icon.setIconImageDrawable(iconDrawable)
+            icon.setIconImage(iconDrawable)
         } else {
-            icon.setIconText(group.group_name)
+            icon.setText(group.group_name)
         }
     }
 

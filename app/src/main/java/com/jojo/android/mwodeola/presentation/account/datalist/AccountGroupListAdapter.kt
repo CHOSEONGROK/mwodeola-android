@@ -32,7 +32,7 @@ import com.jojo.android.mwodeola.R
 import com.jojo.android.mwodeola.data.account.AccountGroup
 import com.jojo.android.mwodeola.databinding.ActivityAccountGroupListRvHeaderBinding
 import com.jojo.android.mwodeola.databinding.ActivityAccountGroupListRvItemBinding
-import com.jojo.android.mwodeola.presentation.common.SquircleIcon
+import com.jojo.android.mwodeola.presentation.common.IconView
 import com.jojo.android.mwodeola.util.dpToPixels
 
 class AccountGroupListAdapter(
@@ -313,7 +313,7 @@ class AccountGroupListAdapter(
         }
     }
 
-    fun deleteSelectionItems() {0
+    fun deleteSelectionItems() {
         val selection = MutableSelection<Long>()
         selectionTracker.copySelection(selection)
         selectionTracker.clearSelection()
@@ -425,7 +425,7 @@ class AccountGroupListAdapter(
         val cardView: MaterialCardView = binding.cardView
         private val checkBox: MaterialCheckBox = binding.checkBox
         private val guideLine: Guideline = binding.startGuideline
-        private val icon: SquircleIcon = binding.icon
+        private val icon: IconView = binding.icon
         private val snsMark: TextView = binding.snsMark
         private val tvAccountName: TextView = binding.tvAccountName
         private val divider: MaterialDivider = binding.divider
@@ -460,14 +460,14 @@ class AccountGroupListAdapter(
 
             when (accountGroup.icon_type) {
                 AccountGroup.ICON_TYPE_TEXT ->
-                    icon.setIconText(accountGroup.group_name)
+                    icon.setText(accountGroup.group_name)
                 AccountGroup.ICON_TYPE_IMAGE ->
-                    icon.setIconText(accountGroup.group_name)
+                    icon.setText(accountGroup.group_name)
                 AccountGroup.ICON_TYPE_INSTALLED_APP_LOGO -> {
                     if (element.icon != null) {
-                        icon.setIconImageDrawable(element.icon)
+                        icon.setIconImage(element.icon)
                     } else {
-                        icon.setIconText(accountGroup.group_name)
+                        icon.setText(accountGroup.group_name)
                     }
                 }
                 AccountGroup.ICON_TYPE_SNS ->

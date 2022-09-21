@@ -227,7 +227,6 @@ class CreateNewAccountPresenter(
         }
 
         appLoadingJob = CoroutineScope(Dispatchers.Default).launch {
-            Log.w(TAG, "loadAppsJob.Start !!")
             isCompletedInstalledAppLoadingJob = false
 
             userApps.forEachIndexed { index, app ->
@@ -242,9 +241,7 @@ class CreateNewAccountPresenter(
 
                     val appInfo = AppInfo(icon, appName, packageName, existingAccountGroup)
                     installedUserApps.add(appInfo)
-                } catch (e: Exception) {
-                    Log.w(TAG, "loadInstalledApplications(): e=$e")
-                }
+                } catch (e: Exception) {}
             }
 
             installedUserApps.sortBy { it.label }
@@ -254,20 +251,10 @@ class CreateNewAccountPresenter(
             }
 
             isCompletedInstalledAppLoadingJob = true
-            Log.w(TAG, "loadAppsJob.End !!")
         }
     }
 
     private fun isUserApp(app: ApplicationInfo): Boolean =
         (app.flags and ApplicationInfo.FLAG_SYSTEM == 0) || (app.flags and ApplicationInfo.FLAG_UPDATED_SYSTEM_APP > 0)
 
-    private fun testUserApp(index: Int, appName: String, app: ApplicationInfo) {
-        val log = StringBuilder("App[$index]: appName=$appName, flags=${app.flags}")
-            .appendLine()
-            .appendLine("FLAG_SYSTEM=${app.flags and ApplicationInfo.FLAG_SYSTEM}")
-            .appendLine("FLAG_UPDATED_SYSTEM_APP=${app.flags and ApplicationInfo.FLAG_UPDATED_SYSTEM_APP}")
-            .toString()
-
-        Log.i(TAG, log)
-    }
 }

@@ -80,7 +80,6 @@ class AppNameSelectBottomSheetRvAdapter(
                                 it.startIndex = index[0]
                                 it.endIndex = index[1]
                             }
-//                            Log.i("AppFilter", "(start=${it.startIndex}, end=${it.endIndex}): appName=${it.label}, keyword:$constraint")
                         }
                         .let {
                             results.count = it.size

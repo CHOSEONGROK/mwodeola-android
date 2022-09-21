@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.jojo.android.mwodeola"
         minSdk 24
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -51,12 +51,12 @@ android {
 
 dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
-    def nav_version = "2.4.2"
+    def nav_version = "2.5.2"
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01' // splash screen (api:31)
 
@@ -76,6 +76,9 @@ dependencies {
     // Jetpack Navigation: Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
+    // jetpack - palette
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+
     // Retrofit 라이브러리
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     // Gson 변환기 라이브러리
@@ -83,7 +86,7 @@ dependencies {
     // Scalars 변환기 라이브러리
     implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
     // Okhttp3 logging interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
 
     // RoomDatabase
     def room_version = "2.4.2"

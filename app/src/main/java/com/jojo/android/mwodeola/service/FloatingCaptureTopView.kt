@@ -61,7 +61,7 @@ class FloatingCaptureTopView(
         binding.ivFloatingCapture.isFocusable = true
         binding.ivFloatingCapture.isFocusableInTouchMode = true
         binding.ivFloatingCapture.setOnFocusChangeListener { v, hasFocus ->
-            Log.e(TAG, "setOnFocusChangeListener, $hasFocus")
+
         }
 
         binding.btnClose.setOnClickListener {
@@ -69,10 +69,8 @@ class FloatingCaptureTopView(
         }
         binding.btnExpander.setOnClickListener {
             params.also {
-                Log.w(FloatingCaptureService.TAG, "(전) x=${params.x}, x=${params.y}, width=${params.width}, height=${params.height}")
 //                it.width += 10.dpToPixels(context)
 //                it.height += 10.dpToPixels(context)
-                Log.e(FloatingCaptureService.TAG, "(후) x=${params.x}, x=${params.y}, width=${params.width}, height=${params.height}")
             }
             windowManager?.updateViewLayout(binding.root, params)
         }
@@ -134,7 +132,6 @@ class FloatingCaptureTopView(
         }
 
         override fun onPinchZoom(dX: Int, dY: Int) {
-            Log.i(FloatingCaptureService.TAG, "onPinchZoom(), dX=$dX, dY=$dY")
             params.width += dX
             params.height += dY
 

@@ -11,6 +11,7 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.ColorInt
 import androidx.appcompat.widget.ContentFrameLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
@@ -112,10 +113,6 @@ class IncubatableFloatingActionButton @JvmOverloads constructor(
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-
-//        Log.d(TAG, "onAttachedToWindow(): elevation=$elevation")
-//        elevation = 20f
-//        compatElevation = 20f
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
@@ -167,6 +164,10 @@ class IncubatableFloatingActionButton @JvmOverloads constructor(
         removeChildAt(index)
     }
 
+    fun setChildFabLabelColor(@ColorInt color: Int) {
+        children.forEach { it.label.setTextColor(color) }
+    }
+
     fun open() {
         if (isActivate.not() && isAnimating.not()) {
             showBlurAndChildrenFab()
@@ -208,7 +209,6 @@ class IncubatableFloatingActionButton @JvmOverloads constructor(
                 }
             }
         } else if (motionEventState == ACTION_HOVER_MOVE) { // 클릭 판정 X
-            //Log.w(TAG, "onActionUp(): motionEventState=$motionEventState")
             this.animate().setInterpolator(OvershootInterpolator())
                 .setDuration(DURATION)
                 .scaleX(1f)

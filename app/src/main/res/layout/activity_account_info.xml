@@ -13,12 +13,11 @@
         app:layout_constraintStart_toStartOf="parent"
         style="?attr/actionButtonStyle"/>
 
-    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+    <com.jojo.android.mwodeola.presentation.common.IconView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="48dp"
         android:id="@+id/icon"
-        app:icon_text_size="20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

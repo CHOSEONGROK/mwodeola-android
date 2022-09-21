@@ -106,10 +106,6 @@ class AccountGroupListRvElementCollection(
     operator fun get(index: Int): RvElement = elements[index]
 
     fun setData(data: List<AccountGroup>) {
-        Log.i(TAG, "setData()")
-//        data.forEachIndexed { index, group ->
-//            Log.i(TAG, "[$index]: groupID=${group.id}, name=${group.group_name}, isSNS=${group.isSnsGroup}")
-//        }
         favoriteItems.clear()
         mostViewItems.clear()
         snsAccountItems.clear()
@@ -299,9 +295,7 @@ class AccountGroupListRvElementCollection(
             accountGroup.app_package_name != null) {
             try {
                 installedAppIcon = packageManager.getApplicationIcon(accountGroup.app_package_name!!)
-            } catch (e: PackageManager.NameNotFoundException) {
-                Log.w(TAG, "createNewItem(): e=$e")
-            }
+            } catch (e: PackageManager.NameNotFoundException) {}
         }
         return Item(accountGroup.group_name, accountGroup, installedAppIcon)
     }
@@ -342,7 +336,6 @@ class AccountGroupListRvElementCollection(
     private fun guess(oldList: ArrayList<RvElement>?, newList: List<RvElement>, forAdded: Boolean, forRemoved: Boolean): List<Int> {
         if (oldList == null) return emptyList()
         if (!forAdded && !forRemoved) return emptyList()
-        Log.w(TAG, "guess(forAdded=$forAdded, forRemoved=$forRemoved)")
 
         val results = arrayListOf<Int>()
 
@@ -366,16 +359,13 @@ class AccountGroupListRvElementCollection(
         } else if (forRemoved) {
             for (i in oldList.lastIndex downTo 0) {
                 val oldElement = oldList[i]
-                Log.d(TAG, LogForGuess.detail("OLD LIST", "Target", i, oldElement))
 
                 if (newList.isNotEmpty()) {
                     for (j in newList.lastIndex downTo 0) {
                         val newElement = newList[j]
                         if (oldElement.equalsWith(newElement)) {
-                            Log.i(TAG, LogForGuess.detail("NEW LIST", "Dest", j, newElement))
                             break
                         } else if (j == 0) {
-                            Log.e(TAG, LogForGuess.detail("OLD LIST", "찾을 수 없음", i, oldElement))
                             results.add(i)
                         }
                     }
@@ -384,10 +374,6 @@ class AccountGroupListRvElementCollection(
                 }
             }
         }
-
-        Log.w(TAG, "guess(forAdded=$forAdded, forRemoved=$forRemoved): oldList.size=${oldList.size}, newList.size=${newList.size}")
-        Log.i(TAG, LogForGuess.last("Old List!!", oldList))
-        Log.i(TAG, LogForGuess.last("New List!!", newList))
 
         oldList.clear()
         return results

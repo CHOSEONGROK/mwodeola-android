@@ -410,7 +410,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.jojo.android.mwodeola.presentation.common.SquircleIcon
+    <com.jojo.android.mwodeola.presentation.common.IconView
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="24dp"

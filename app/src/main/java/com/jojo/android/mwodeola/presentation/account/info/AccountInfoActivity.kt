@@ -69,9 +69,9 @@ class AccountInfoActivity : BaseActivity(), AccountInfoContract.View, Navigation
 //    override fun showData(account: Account): Unit = with (binding) {
 //        when (account.ownGroup.iconType) {
 //            AccountGroup.IconType.TEXT ->
-//                icon.setIconText(account.ownGroup.name)
+//                icon.setText(account.ownGroup.name)
 //            AccountGroup.IconType.INSTALLED_APP_LOGO ->
-//                icon.setIconImageDrawable(
+//                icon.setIconImage(
 //                    apps.find { it.packageName == account.ownGroup.appPackageName }
 //                        ?.loadIcon(packageManager)
 //                )

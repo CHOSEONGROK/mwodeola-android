@@ -23,8 +23,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.signUpVerifyEmail(body).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else {
@@ -46,12 +44,9 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
     override fun signUpVerifyPhone(phoneNumber: String, callback: SignUpSource.BaseCallback) {
         val body = SignUpDTO.SignUpVerifyPhone(phoneNumber)
-        Log.i(TAG, "signUpVerifyPhone(): body=$body")
 
         service.signUpVerifyPhone(body).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.d(TAG, "signUpVerify.onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else if (response.errorBody() != null) {
@@ -74,12 +69,9 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
     override fun signUp(name: String, email: String, phoneNumber: String, password: String,
                         callback: SignUpSource.BaseCallback) {
         val body = SignUpDTO.SignUp(name, email, phoneNumber, password)
-        Log.i(TAG, "signUp(): body=$body")
 
         service.signUp(body).enqueue(object : Callback<TokenPair> {
             override fun onResponse(call: Call<TokenPair>, response: Response<TokenPair>) {
-                Log.i(TAG, "signUp.onResponse(): response=$response")
-
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     TokenSharedPref.setRefreshToken(context, responseBody.refresh)
@@ -104,8 +96,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.signInVerify(body).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else {
@@ -131,8 +121,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.signIn(body).enqueue(object : Callback<TokenPair> {
             override fun onResponse(call: Call<TokenPair>, response: Response<TokenPair>) {
-                Log.i(TAG, "signIn.onResponse(): response=$response")
-
                 val responseBody = response.body()
 
                 if (response.isSuccessful && responseBody != null) {
@@ -174,8 +162,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.signInAuto(refreshToken).enqueue(object : Callback<TokenPair> {
             override fun onResponse(call: Call<TokenPair>, response: Response<TokenPair>) {
-                Log.i(TAG, "signInAuto.onResponse(): response=$response")
-
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     TokenSharedPref.setRefreshToken(context, responseBody.refresh)
@@ -217,8 +203,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.signOut(refreshToken).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "signOut.onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     TokenSharedPref.removeToken(context)
                     callback.onSucceed()
@@ -310,8 +294,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.withdrawal(refreshToken!!, phoneNumber, password).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "withdrawal.onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else {
@@ -367,8 +349,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.authPassword(header!!, body).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "authPassword.onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else if (response.errorBody() != null) {
@@ -401,8 +381,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.changePassword(header!!, body).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i(TAG, "changePassword.onResponse(): response=$response")
-
                 if (response.isSuccessful) {
                     callback.onSucceed()
                 } else {
@@ -433,8 +411,6 @@ class SignUpDataSource(private val context: Context) : SignUpSource {
 
         service.refreshToken(header!!).enqueue(object : Callback<TokenPair> {
             override fun onResponse(call: Call<TokenPair>, response: Response<TokenPair>) {
-                Log.i(TAG, "refreshToken.onResponse(): response=$response")
-
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     TokenSharedPref.setAccessToken(context, responseBody.access)

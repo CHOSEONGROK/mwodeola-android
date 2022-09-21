@@ -1,10 +1,11 @@
 package com.jojo.android.mwodeola.presentation.account.datalist.search
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
-import android.text.style.ForegroundColorSpan
+import android.text.style.*
 import android.util.Log
 import androidx.core.text.clearSpans
 
@@ -39,6 +40,8 @@ object FuzzyMatcher {
     private const val CONSONANTS_END_UNICODE = 12622 // ㅎ
     private const val VOWELS_BEGIN_UNICODE = 12623 // ㅏ
     private const val VOWELS_END_UNICODE = 12643 // ㅣ
+
+    private val COLOR = Color.rgb(49, 130, 247)
 
     private val ALPHABET_UPPER_CASE = ALPHABET_UPPER_CASE_BEGIN_UNICODE..ALPHABET_UPPER_CASE_END_UNICODE // A ~ Z
     private val ALPHABET_LOWER_CASE = ALPHABET_LOWER_CASE_BEGIN_UNICODE..ALPHABET_LOWER_CASE_END_UNICODE // a ~ z
@@ -82,9 +85,10 @@ object FuzzyMatcher {
 
 
     /**
-     * source: Fuzzy Matching 의 대상 문자열
-     * keyword: 검색어
-     * return: source 문자열에서 keyword 문자들의 fuzzy matching 이 true 인 index array
+     * @param source: Fuzzy Matching 의 대상 문자열
+     * @param keyword: 검색어
+     *
+     * @return source 문자열에서 keyword 문자들의 fuzzy matching 이 true 인 index array
      * */
     fun matches(source: String, keyword: String): IntArray {
         val trimKeyword = keyword.replace(" ", "")
@@ -200,8 +204,6 @@ object FuzzyMatcher {
             codePoint = Character.codePointAt(source, i)
             codePointCharCount = Character.charCount(codePoint)
             codePointString = String(sourceCharArray, i, codePointCharCount)
-
-            Log.i(TAG, "i=$i, codePoint=$codePoint, codePointString=$codePointString")
 
             i += codePointCharCount
         }

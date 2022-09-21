@@ -1,17 +1,14 @@
 package com.jojo.android.mwodeola.presentation.account.create.iconselect
 
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
 import android.widget.Toast
-import com.jojo.android.mwodeola.R
 import com.jojo.android.mwodeola.databinding.ActivityAccountGroupIconSelectBinding
 
 import com.jojo.android.mwodeola.presentation.BaseActivity
+import com.jojo.android.mwodeola.presentation.common.IconView
 
 class AccountIconSelectActivity : BaseActivity(), AccountIconSelectContract.View {
     companion object {
@@ -37,10 +34,10 @@ class AccountIconSelectActivity : BaseActivity(), AccountIconSelectContract.View
 //        accountGroup = intent.getSerializableExtra(EXTRA_ACCOUNT_GROUP) as AccountGroup
 
         with (binding) {
-//            iconDefault.setIconText(accountGroup.name)
+//            iconDefault.setText(accountGroup.name)
 
 //            if (accountGroup.appPackageName != null) {
-//                iconInstalledApp.setIconImageDrawable(
+//                iconInstalledApp.setImageIcon(
 //                    apps.find { it.packageName == accountGroup.appPackageName }
 //                        ?.loadIcon(packageManager)
 //                )
@@ -63,8 +60,10 @@ class AccountIconSelectActivity : BaseActivity(), AccountIconSelectContract.View
 //            containerIconUserCustom.setOnClickListener { showToastForUnSupported() }
         }
 
-        setGrayScaleFilter(binding.iconExtractedFromUrl)
-        setGrayScaleFilter(binding.iconInServer)
+//        setGrayScaleFilter(binding.iconExtractedFromUrl)
+//        setGrayScaleFilter(binding.iconInServer)
+
+
     }
 
 //    private fun finishWithResult(iconType: AccountGroup.IconType) {
@@ -72,22 +71,20 @@ class AccountIconSelectActivity : BaseActivity(), AccountIconSelectContract.View
 //        finish()
 //    }
 
-    private fun setGrayScaleFilter(view: ImageView) {
-        if (view.colorFilter == null) {
-            Log.e(TAG, "setGrayScaleFilter(1)")
-            val matrix = ColorMatrix().apply {
-                setSaturation(0f)
-            }
-            val colorFilter = ColorMatrixColorFilter(matrix)
-
-            view.colorFilter = colorFilter
-            view.imageAlpha = 128
-        } else {
-            Log.e(TAG, "setGrayScaleFilter(2)")
-            view.colorFilter = null
-            view.imageAlpha = 255
-        }
-    }
+//    private fun setGrayScaleFilter(iconView: IconView) {
+//        if (iconView.colorFilter == null) {
+//            val matrix = ColorMatrix().apply {
+//                setSaturation(0f)
+//            }
+//            val colorFilter = ColorMatrixColorFilter(matrix)
+//
+//            iconView.colorFilter = colorFilter
+//            iconView.imageAlpha = 128
+//        } else {
+//            iconView.colorFilter = null
+//            iconView.imageAlpha = 255
+//        }
+//    }
 
     private fun showToastForUnSupported() {
         Toast.makeText(baseContext, "미지원 기능입니다.", Toast.LENGTH_SHORT).show()

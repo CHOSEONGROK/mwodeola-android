@@ -99,10 +99,7 @@ object RetrofitService {
 
     private fun getTokenAuthenticator(context: Context): Authenticator = object : Authenticator {
         override fun authenticate(route: Route?, response: Response): Request? {
-            Log.i(TAG, "TokenAuthenticator: response=$response")
-
             val errorResponse = ErrorResponse.createBy(response)
-            Log.w(TAG, "TokenAuthenticator: errorResponse=${errorResponse.rawErrorString}")
 
             val tokenError = (errorResponse.responseCode == ResponseCode.HTTP_401_UNAUTHORIZED) &&
                     (errorResponse.code == ErrorResponse.ERROR_CODE_TOKEN_NOT_VALID ||
@@ -110,7 +107,6 @@ object RetrofitService {
                             errorResponse.detail == ErrorResponse.ERROR_DETAIL_TOKEN_NOT_PROVIDED)
 
             if (tokenError) {
-                Log.i(TAG, "TokenAuthenticator.tokenError: REFRESH_TOKEN is null ?= ${TokenSharedPref.REFRESH_TOKEN == null}")
                 if (TokenSharedPref.REFRESH_TOKEN == null) {
                     TokenSharedPref.init(context)
                     if (TokenSharedPref.REFRESH_TOKEN == null)
@@ -119,22 +115,18 @@ object RetrofitService {
 
                 // request.tag 는 재요청 횟수를 재기 위함.
                 val tag = response.request.tag()
-                Log.i(TAG, "TokenAuthenticator.tokenError: response.request.tag(재요청횟수)=$tag")
                 if (tag is Int && tag < 2) {
                     getSignUpService(context).refreshToken(TokenSharedPref.REFRESH_TOKEN!!).execute()
                         .body()?.let {
                             TokenSharedPref.setAccessToken(context, it.access)
                         }
 
-                    Log.d(TAG, "TokenAuthenticator: 토큰 갱신 완료!!")
                     return response.request.newBuilder()
                         .removeHeader("Authorization")
                         .addHeader("Authorization", TokenSharedPref.ACCESS_TOKEN!!)
                         .method(response.request.method, response.request.body)
                         .tag(tag + 1)
                         .build()
-                } else {
-                    Log.w(TAG, "TokenAuthenticator: [재요청횟수 초과!!] tag=$tag: request=${response.request}")
                 }
 
                 // response.close()

@@ -19,9 +19,7 @@ object PackageVerifier {
         val hash: String
         try {
             hash = getCertificateHash(context, packageName)
-            Log.d(TAG, "Hash for $packageName: $hash")
         } catch (e: Exception) {
-            Log.w(TAG, "Error getting hash for $packageName: $e")
             return false
         }
 
@@ -68,16 +66,12 @@ object PackageVerifier {
         val prefs = context.applicationContext.getSharedPreferences(
             "package-hashes", Context.MODE_PRIVATE)
         if (!prefs.contains(packageName)) {
-            Log.d(TAG, "Creating initial hash for $packageName")
             prefs.edit().putString(packageName, hash).apply()
             return true
         }
 
         val existingHash = prefs.getString(packageName, null)
         if (hash != existingHash) {
-            Log.w(
-                TAG, "hash mismatch for " + packageName + ": expected " + existingHash
-                    + ", got " + hash)
             return false
         }
         return true

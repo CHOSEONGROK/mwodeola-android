@@ -1,4 +1,4 @@
-package com.jojo.android.mwodeola.presentation.account.create
+package com.jojo.android.mwodeola.util
 
 /**
  * Created by Cristian Holdunu on 12/01/2019.

@@ -87,11 +87,7 @@ class AccountGroupListFragment : BaseFragment(), DrawerContent, AccountGroupList
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(TAG, "onViewCreated(): rootView.layoutParams=${binding.root.layoutParams}")
-
         binding.root.layoutParams = (binding.root.layoutParams as ConstraintLayout.LayoutParams).apply {
-            Log.d(TAG, "onViewCreated(): rootView.layoutParams.width=${width}")
-            Log.d(TAG, "onViewCreated(): rootView.layoutParams.height=${height}")
             width = MATCH_PARENT
             height = MATCH_PARENT
         }
@@ -225,9 +221,6 @@ class AccountGroupListFragment : BaseFragment(), DrawerContent, AccountGroupList
     }
 
     override fun removeAccountGroups(ids: List<String>) {
-        Log.e(TAG, "removeAccountGroups(): ids.size=${ids.size}")
-        ids.forEachIndexed { i, id -> Log.i(TAG, "removeAccountGroups(): groupID[$i]=$id") }
-
         listAdapter.deleteSelectionItems()
         listAdapter.cancelSelectionMode()
         cancelSelectionMode()
@@ -277,7 +270,6 @@ class AccountGroupListFragment : BaseFragment(), DrawerContent, AccountGroupList
     }
 
     override fun startCreateNewAccountActivity() {
-        Log.d(TAG, "startCreateNewAccountActivity()")
         val constants = AccountDetailActivity
 
         drawerOwner.launchActivityForResult(AccountDetailActivity::class.java, Intent().apply {
@@ -382,7 +374,6 @@ class AccountGroupListFragment : BaseFragment(), DrawerContent, AccountGroupList
 
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             super.onScrollStateChanged(recyclerView, newState)
-//            Log.d(TAG, "onScrollStateChanged(): $newState")
             if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                 if (endAction != null) {
                     endAction?.run()
@@ -399,8 +390,6 @@ class AccountGroupListFragment : BaseFragment(), DrawerContent, AccountGroupList
             val firstVisiblePosition = layoutManager.findFirstCompletelyVisibleItemPosition()
             val lastVisiblePosition = layoutManager.findLastCompletelyVisibleItemPosition()
             val itemCount = recyclerView.adapter!!.itemCount
-
-//            Log.i(TAG, "smoothScrollWithEndAction(): target=$position, first=$firstVisiblePosition, last=$lastVisiblePosition")
 
             when (position) {
                 in 0 until firstVisiblePosition -> {

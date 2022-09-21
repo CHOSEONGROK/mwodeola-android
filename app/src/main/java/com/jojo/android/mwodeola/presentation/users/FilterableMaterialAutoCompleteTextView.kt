@@ -178,7 +178,6 @@ class FilterableMaterialAutoCompleteTextView : MaterialAutoCompleteTextView {
 
     private fun setFiltersByInputType(inputType: Int) {
         // 필터 순서 중요!!
-        Log.i(TAG, "setFiltersByInputType(): inputType=$inputType")
         when (inputType) {
             InputType.TYPE_TEXT_VARIATION_PERSON_NAME -> {}
 
@@ -215,7 +214,6 @@ class FilterableMaterialAutoCompleteTextView : MaterialAutoCompleteTextView {
 
         override fun filter(source: CharSequence?, start: Int, end: Int,
                             dest: Spanned?, dstart: Int, dend: Int): CharSequence {
-//            Log.i(TAG, "filter(): source=$source, start=$start, end=$end, dest=$dest, dstart=$dstart, dend=$dend")
 
             if (source.isNullOrBlank()) {
                 // removed

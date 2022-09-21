@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SquircleImageView">
-        <attr name="civ_border_width" format="dimension" />
-        <attr name="civ_border_color" format="color" />
-        <attr name="civ_border_overlay" format="boolean" />
-        <attr name="civ_circle_background_color" format="color" />
-    </declare-styleable>
+<!--    <declare-styleable name="SquircleImageView">-->
+<!--        <attr name="civ_border_width" format="dimension" />-->
+<!--        <attr name="civ_border_color" format="color" />-->
+<!--        <attr name="civ_border_overlay" format="boolean" />-->
+<!--        <attr name="civ_circle_background_color" format="color" />-->
+<!--    </declare-styleable>-->
 
-    <declare-styleable name="SquircleIcon">
+<!--    <declare-styleable name="SquircleIcon">-->
+<!--        <attr name="icon_text" format="string"/>-->
+<!--        <attr name="icon_text_size" format="dimension"/>-->
+<!--        <attr name="icon_text_color" format="color"/>-->
+<!--        <attr name="icon_text_backgroundColor" format="color"/>-->
+<!--        <attr name="icon_imgSrc" format="reference|color"/>-->
+<!--        <attr name="badge" format="reference"/>-->
+<!--        <attr name="maskView" format="reference"/>-->
+<!--        <attr name="maskView_backgroundColor" format="color"/>-->
+<!--    </declare-styleable>-->
+
+    <declare-styleable name="IconView">
         <attr name="icon_text" format="string"/>
-        <attr name="icon_text_size" format="dimension"/>
         <attr name="icon_text_color" format="color"/>
-        <attr name="icon_text_backgroundColor" format="color"/>
-        <attr name="icon_imgSrc" format="reference|color"/>
-        <attr name="badge" format="reference"/>
-        <attr name="maskView" format="reference"/>
-        <attr name="maskView_backgroundColor" format="color"/>
+        <attr name="icon_text_background" format="color|reference"/>
+        <attr name="icon_image_src" format="reference"/>
+        <attr name="icon_auto_stroke" format="boolean"/>
+        <attr name="icon_oval_offset" format="float"/>
+        <attr name="icon_oval_shape_enable" format="boolean"/>
+        <attr name="icon_oval_auto_stroke_enable" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="RoundedEdgeConstraintLayout">

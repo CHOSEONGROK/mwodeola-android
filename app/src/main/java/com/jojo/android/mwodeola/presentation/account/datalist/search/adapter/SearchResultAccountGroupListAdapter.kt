@@ -18,7 +18,7 @@ import com.jojo.android.mwodeola.databinding.ActivitySearchResultAccountGroupLis
 import com.jojo.android.mwodeola.presentation.account.datalist.search.Filter2
 import com.jojo.android.mwodeola.presentation.account.datalist.search.FuzzyMatcher
 import com.jojo.android.mwodeola.presentation.account.datalist.search.SearchAccountContract
-import com.jojo.android.mwodeola.presentation.common.SquircleIcon
+import com.jojo.android.mwodeola.presentation.common.IconView
 import com.jojo.android.mwodeola.util.Log2
 
 @SuppressLint("NotifyDataSetChanged")
@@ -87,7 +87,7 @@ class SearchResultAccountGroupListAdapter(
     }
 
     class ViewHolder(binding: ActivitySearchResultAccountGroupListItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val icon: SquircleIcon = binding.icon
+        val icon: IconView = binding.icon
         val snsMark: TextView = binding.snsMark
         val tvAccountName: TextView = binding.tvAccountName
         val bottomDivider: MaterialDivider = binding.divider

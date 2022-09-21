@@ -35,12 +35,9 @@ class AutofillStructure {
             this.metadataList.add(it)
 
             saveType = saveType or it.saveType
-            Log.i(TAG, "addAllMetadata(): saveType=$saveType")
-
         }
 
         autofillFieldDataType = setAutofillFieldDataType(metadataList)
-        Log.i(TAG, "addAllMetadata(): autofillFieldDataType=$autofillFieldDataType")
     }
 
     fun addAllData(data: List<IAutofillData>?) = apply {

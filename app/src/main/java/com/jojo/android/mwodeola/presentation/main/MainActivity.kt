@@ -2,8 +2,11 @@ package com.jojo.android.mwodeola.presentation.main
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.autofill.AutofillManager
 import android.widget.Toast
@@ -45,7 +48,19 @@ class MainActivity : BaseActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        Log.w(TAG, "onCreate(): changingConfigurations=$changingConfigurations")
+        Log.w(TAG, "onCreate(): isChangingConfigurations=$isChangingConfigurations")
+        Log.w(TAG, "onCreate(): lastNonConfigurationInstance=$lastNonConfigurationInstance")
+        Log.w(TAG, "onCreate(): CONFIG_KEYBOARD=${changingConfigurations or ActivityInfo.CONFIG_KEYBOARD}")
+        Log.w(TAG, "onCreate(): CONFIG_KEYBOARD_HIDDEN=${changingConfigurations or ActivityInfo.CONFIG_KEYBOARD_HIDDEN}")
+        Log.w(TAG, "onCreate(): CONFIG_SCREEN_LAYOUT=${changingConfigurations or ActivityInfo.CONFIG_SCREEN_LAYOUT}")
+        Log.w(TAG, "onCreate(): CONFIG_SMALLEST_SCREEN_SIZE=${changingConfigurations or ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE}")
+
         initView()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
     }
 
     override fun onResume() {

@@ -15,7 +15,7 @@ import com.jojo.android.mwodeola.data.account.Account
 import com.jojo.android.mwodeola.data.account.AccountGroup
 import com.jojo.android.mwodeola.databinding.DialogAccountSelectionRvHeaderBinding
 import com.jojo.android.mwodeola.databinding.DialogAccountSelectionRvItemBinding
-import com.jojo.android.mwodeola.presentation.common.SquircleIcon
+import com.jojo.android.mwodeola.presentation.common.IconView
 import com.jojo.android.mwodeola.util.doForEach
 import kotlin.IllegalArgumentException
 
@@ -56,9 +56,9 @@ class SelectAccountInGroupRvAdapter(
                 holder.ivIcon.setSnsGroupIcon(item.account.sns_group!!.sns)
             } else {
                 if (item.iconDrawable != null) {
-                    holder.ivIcon.setIconImageDrawable(item.iconDrawable)
+                    holder.ivIcon.setIconImage(item.iconDrawable)
                 } else if (item.iconText != null) {
-                    holder.ivIcon.setIconText(item.iconText)
+                    holder.ivIcon.setText(item.iconText)
                 }
             }
 
@@ -194,7 +194,7 @@ class SelectAccountInGroupRvAdapter(
     class ItemViewHolder(
         binding: DialogAccountSelectionRvItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        val ivIcon: SquircleIcon = binding.ivIcon
+        val ivIcon: IconView = binding.ivIcon
         val tvUserID: TextView = binding.tvUserId
         val snsMark: FrameLayout = binding.containerSnsMark
     }

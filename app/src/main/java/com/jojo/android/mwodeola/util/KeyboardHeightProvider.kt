@@ -11,7 +11,6 @@ import android.view.ViewTreeObserver
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.PopupWindow
-import com.jojo.android.mwodeola.presentation.account.create.KeyboardInfo
 
 /**
  * Created by Cristian Holdunu on 11/01/2019.
@@ -116,7 +115,6 @@ class KeyboardHeightProvider(private val activity: Activity) : PopupWindow(activ
                 KeyboardInfo.keyboardHeight = keyboardHeight
             }
             if (keyboardHeight != _lastKeyboardHeight) {
-                Log.d("KeyboardHeightProvider", "computeKeyboardState(): keyboardHeight=$keyboardHeight, _lastKeyboardHeight=$_lastKeyboardHeight")
                 notifyKeyboardHeightChanged(keyboardHeight, orientation)
             }
             _lastKeyboardHeight = keyboardHeight

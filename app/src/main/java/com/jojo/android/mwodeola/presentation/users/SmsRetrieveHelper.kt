@@ -37,7 +37,6 @@ class SmsRetrieveHelper(private val activity: Activity) {
                     CommonStatusCodes.SUCCESS -> {
                         // Get consent intent
                         val consentIntent = extras.getParcelable<Intent>(SmsRetriever.EXTRA_CONSENT_INTENT)
-                        Log.d(TAG, "onReceive(): CommonStatusCodes.SUCCESS, consentIntent=$consentIntent")
                         try {
                             // Start activity to show consent dialog to user, activity must be started in
                             // 5 minutes, otherwise you'll receive another TIMEOUT intent
@@ -45,16 +44,12 @@ class SmsRetrieveHelper(private val activity: Activity) {
                                 activity.startActivityForResult(consentIntent, SMS_CONSENT_REQUEST)
                             }
                         } catch (e: ActivityNotFoundException) {
-                            Log.w(TAG, "onReceive(): e=$e")
                         } catch (e: NullPointerException) {
-                            Log.w(TAG, "onReceive(): e=$e")
                         } catch (e: Exception) {
-                            Log.w(TAG, "onReceive(): e=$e")
                         }
                     }
                     CommonStatusCodes.TIMEOUT -> {
                         // Time out occurred, handle the error.
-                        Log.w(TAG, "onReceive(): CommonStatusCodes.TIMEOUT")
                     }
                 }
             }
@@ -140,7 +135,6 @@ class SmsRetrieveHelper(private val activity: Activity) {
                     // Extract one-time code from the message and complete verification
                     // `message` contains the entire text of the SMS message, so you will need
                     // to parse the string.
-                    Log.d(TAG, "handleActivityResult(): message=$message")
                     if (message != null) {
                         callback?.onSmsRetrieved(message, parseOneTimeCode(message))
                     }
