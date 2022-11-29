@@ -71,7 +71,7 @@
 
 <br/>
 
-## Skills
+## 사용된 기술
 
 - Kotlin, MVP
 - Retrofit2, Okhttp3, Room
