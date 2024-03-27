@@ -119,11 +119,11 @@ class SettingsAuthTypeSelectFragment : PreferenceFragmentCompat(), SettingsSuppo
     inner class ScreenAuthenticatorCallback : ActivityResultCallback<ActivityResult> {
         private val constants = BaseAuthenticationActivity
 
-        override fun onActivityResult(result: ActivityResult?) {
-            if (result?.resultCode == AppCompatActivity.RESULT_CANCELED)
+        override fun onActivityResult(result: ActivityResult) {
+            if (result.resultCode == AppCompatActivity.RESULT_CANCELED)
                 return
 
-            val resultData = result?.data
+            val resultData = result.data
                 ?: return
 
             val resultCode = resultData.getIntExtra(constants.EXTRA_RESULT, -1)

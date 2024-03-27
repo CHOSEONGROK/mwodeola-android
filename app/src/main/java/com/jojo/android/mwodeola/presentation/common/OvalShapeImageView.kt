@@ -70,10 +70,10 @@ class OvalShapeImageView constructor(
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (isAutoStrokeEnabled && isDrawingStroke) {
-            canvas?.drawPath(ovalPath, strokePaint)
+            canvas.drawPath(ovalPath, strokePaint)
         }
     }
 

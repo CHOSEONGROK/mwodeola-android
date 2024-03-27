@@ -84,15 +84,14 @@ class FloatingCaptureLayout : ConstraintLayout {
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 //        Log.i(TAG, "onDraw()")
     }
 
-    override fun dispatchDraw(canvas: Canvas?) {
+    override fun dispatchDraw(canvas: Canvas) {
         super.dispatchDraw(canvas)
 //        Log.i(TAG, "dispatchDraw($canvas)")
-        if (canvas == null) return
         if (!_isFocused) return
         if (child2.visibility == VISIBLE) return
 

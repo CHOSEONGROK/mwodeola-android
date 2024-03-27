@@ -437,13 +437,10 @@ class PatternPasswordView @JvmOverloads constructor(
         return true
     }
 
-    override fun dispatchDraw(canvas: Canvas?) {
+    override fun dispatchDraw(canvas: Canvas) {
         // call block() here if you want to draw behind children
         super.dispatchDraw(canvas)
         // call block() here if you want to draw over children
-
-        if (canvas == null)
-            return
 
         if (!isRunningAnimation) {
             for (index in selectedDotViews.indices) {

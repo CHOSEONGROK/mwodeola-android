@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.jojo.android.mwodeola"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -41,12 +41,16 @@ android {
         enabled = true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
+    buildFeatures {
+        dataBinding true
+    }
+    namespace 'com.jojo.android.mwodeola'
 }
 
 dependencies {
@@ -55,16 +59,14 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01' // splash screen (api:31)
-
-    implementation 'androidx.test.ext:junit-ktx:1.1.3'
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation "androidx.room:room-testing:2.4.2"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
 
     // Jetpack Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -76,18 +78,6 @@ dependencies {
     // Jetpack Navigation: Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
-    // jetpack - palette
-    implementation 'androidx.palette:palette-ktx:1.0.0'
-
-    // Retrofit 라이브러리
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    // Gson 변환기 라이브러리
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    // Scalars 변환기 라이브러리
-    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
-    // Okhttp3 logging interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
-
     // RoomDatabase
     def room_version = "2.4.2"
     implementation "androidx.room:room-runtime:$room_version"
@@ -97,10 +87,15 @@ dependencies {
 
     implementation 'androidx.biometric:biometric:1.1.0' // Biometric
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0" // SwipeRefreshLayout
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1" // Coroutine
     implementation 'androidx.recyclerview:recyclerview-selection:1.1.0' // RecyclerView Selection Tracker
 
-    implementation 'com.facebook.shimmer:shimmer:0.5.0' // Facebook's open source: Shimmer
+    // jetpack - palette
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+
+    implementation 'com.google.android.material:material:1.6.1'
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:29.0.3') // Import the BoM for the Firebase platform
@@ -115,6 +110,17 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
     implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
 
+    implementation 'com.facebook.shimmer:shimmer:0.5.0' // Facebook's open source: Shimmer
+
+    // Retrofit 라이브러리
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Gson 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // Scalars 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+    // Okhttp3 logging interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
+
     // image loader - coil
     implementation("io.coil-kt:coil:1.3.2")
 
@@ -126,4 +132,10 @@ dependencies {
 
     // Dots Indicator
     // implementation 'com.tbuonomo:dotsindicator:4.2'
+
+    implementation 'androidx.test.ext:junit-ktx:1.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "androidx.room:room-testing:2.4.2"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
