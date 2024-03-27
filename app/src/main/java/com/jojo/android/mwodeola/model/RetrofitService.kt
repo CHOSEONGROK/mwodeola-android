@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitService {
     private const val TAG = "RetrofitService"
-    private const val BASE_URL = "http://ec2-52-79-191-108.ap-northeast-2.compute.amazonaws.com/"
+    private const val BASE_URL = "http://3.39.37.244/"
+//    private const val BASE_URL = "http://ec2-52-79-191-108.ap-northeast-2.compute.amazonaws.com/"
     private const val TIME_OUT = 1500L
 
     private var _signUpService: SignUpService? = null
